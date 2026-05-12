@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -266,6 +267,80 @@ transform:translateY(-3px);
 box-shadow:0 0 25px rgba(0,213,255,.4);
 }
 
+.social-contact{
+margin-top:40px;
+padding-top:35px;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.social-contact h3{
+text-align:center;
+font-size:28px;
+margin-bottom:25px;
+color:#00d5ff;
+}
+
+.social-box{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.social-item{
+display:flex;
+align-items:center;
+gap:18px;
+background:#122233;
+padding:18px;
+border-radius:18px;
+transition:.3s;
+color:white;
+}
+
+.social-item:hover{
+transform:translateY(-4px);
+border:1px solid #00d5ff;
+box-shadow:0 0 20px rgba(0,213,255,.15);
+}
+
+.social-icon{
+width:60px;
+height:60px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+flex-shrink:0;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.email{
+background:#ff6b6b;
+}
+
+.location-icon{
+background:#00d5ff;
+color:#07131f;
+}
+
+.social-item h4{
+margin-bottom:4px;
+font-size:20px;
+}
+
+.social-item p{
+color:#d3dce5;
+font-size:16px;
+}
+
+.location{
+cursor:default;
+}
+
 .work-time{
 margin-top:25px;
 text-align:center;
@@ -365,7 +440,7 @@ width:170px;
 <h3>ساعات العمل</h3>
 <p>
 من الساعة 5 مساءً حتى 4 صباحاً.
-لأن المبرمج الطبيعي كائن لا يرى الشمس غالباً.
+لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.
 </p>
 </div>
 
@@ -383,44 +458,33 @@ width:170px;
 
 <div class="pricing">
 
-<!-- موقع شخصي -->
-
 <div class="price-card">
-
 <h3>موقع شخصي</h3>
 <div class="price">600 ر.س</div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-صفحة تعريفية احترافية
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">صفحة تعريفية احترافية</div>
 <div class="feature-content">
 صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تصميم متجاوب
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">تصميم متجاوب</div>
 <div class="feature-content">
 الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-روابط تواصل
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">روابط تواصل</div>
 <div class="feature-content">
 إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-سرعة عالية
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">سرعة عالية</div>
 <div class="feature-content">
 تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل.
 </div>
@@ -428,44 +492,33 @@ width:170px;
 
 </div>
 
-<!-- موقع شركة -->
-
 <div class="price-card">
-
 <h3>موقع شركة</h3>
 <div class="price">1500 ر.س</div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-عدة صفحات
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">عدة صفحات</div>
 <div class="feature-content">
 يشمل صفحات الخدمات والتواصل ومن نحن وغيرها.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تعريف بالخدمات
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">تعريف بالخدمات</div>
 <div class="feature-content">
 عرض خدمات الشركة بطريقة منظمة واحترافية.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-نموذج طلبات
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">نموذج طلبات</div>
 <div class="feature-content">
 استقبال طلبات العملاء مباشرة عبر الموقع.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تصميم احترافي
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">تصميم احترافي</div>
 <div class="feature-content">
 واجهة حديثة تعكس هوية الشركة بشكل قوي.
 </div>
@@ -473,44 +526,33 @@ width:170px;
 
 </div>
 
-<!-- متجر إلكتروني -->
-
 <div class="price-card">
-
 <h3>متجر إلكتروني</h3>
 <div class="price">3500 ر.س</div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-عرض المنتجات
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">عرض المنتجات</div>
 <div class="feature-content">
 إضافة المنتجات مع الصور والأسعار والتفاصيل.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-سلة شراء
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">سلة شراء</div>
 <div class="feature-content">
 إمكانية إضافة المنتجات وإتمام الطلب بسهولة.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-بوابات دفع
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">بوابات دفع</div>
 <div class="feature-content">
 ربط وسائل الدفع الإلكتروني المختلفة.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-لوحة تحكم
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">لوحة تحكم</div>
 <div class="feature-content">
 إدارة المنتجات والطلبات بسهولة من لوحة خاصة.
 </div>
@@ -518,44 +560,33 @@ width:170px;
 
 </div>
 
-<!-- نظام خاص -->
-
 <div class="price-card">
-
 <h3>نظام خاص</h3>
 <div class="price">5000+ ر.س</div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-أنظمة حجز
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">أنظمة حجز</div>
 <div class="feature-content">
 أنظمة مواعيد وحجوزات متكاملة حسب النشاط.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-أنظمة إدارة
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">أنظمة إدارة</div>
 <div class="feature-content">
 إدارة بيانات وطلبات وتقارير خاصة بالمشروع.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-خصائص مخصصة
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">خصائص مخصصة</div>
 <div class="feature-content">
 إضافة أي وظائف خاصة يحتاجها المشروع.
 </div>
 </div>
 
 <div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تطوير كامل حسب الطلب
-</div>
+<div class="feature-title" onclick="toggleFeature(this)">تطوير كامل حسب الطلب</div>
 <div class="feature-content">
 تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته.
 </div>
@@ -574,11 +605,7 @@ width:170px;
 <h2 class="section-title">اطلب موقعك الآن</h2>
 
 <p class="section-sub">
-قم بإرسال تفاصيل مشروعك وسيتم التواصل معك عبر البريد الإلكتروني:
-<br>
-<strong>
-Esrameliodase42@gmail.com
-</strong>
+قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
 </p>
 
 <form action="https://formspree.io/f/xdablqqn" method="POST">
@@ -604,6 +631,55 @@ Esrameliodase42@gmail.com
 <button type="submit">إرسال الطلب</button>
 
 </form>
+
+<div class="social-contact">
+
+<h3>تواصل معنا</h3>
+
+<div class="social-box">
+
+<a href="https://wa.me/966100942327" target="_blank" class="social-item">
+
+<div class="social-icon whatsapp">
+💬
+</div>
+
+<div>
+<h4>واتساب</h4>
+<p>10 094 2327</p>
+</div>
+
+</a>
+
+<a href="mailto:esrasaifeldeen@gmail.com" class="social-item">
+
+<div class="social-icon email">
+📧
+</div>
+
+<div>
+<h4>البريد الإلكتروني</h4>
+<p>esrasaifeldeen@gmail.com</p>
+</div>
+
+</a>
+
+<div class="social-item location">
+
+<div class="social-icon location-icon">
+📍
+</div>
+
+<div>
+<h4>الموقع</h4>
+<p>المدينة المنورة</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="work-time">
 ساعات العمل: من 5 مساءً حتى 4 صباحاً
@@ -642,4 +718,4 @@ content.style.display = "block";
 </script>
 
 </body>
-</html>
+  </html>
