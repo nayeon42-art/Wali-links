@@ -57,10 +57,8 @@ font-size:65px;
 font-weight:800;
 margin-bottom:15px;
 background:linear-gradient(to left,#00d5ff,#ffffff);
-
 background-clip:text;
 -webkit-background-clip:text;
-
 color:transparent;
 -webkit-text-fill-color:transparent;
 }
@@ -190,14 +188,37 @@ margin-bottom:15px;
 font-size:42px;
 font-weight:800;
 color:#00d5ff;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-.price-card ul{
-list-style:none;
-line-height:2.4;
-color:#d1dbe5;
-margin-bottom:25px;
+.feature{
+margin-bottom:15px;
+text-align:right;
+}
+
+.feature-title{
+background:#122233;
+padding:14px;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
+}
+
+.feature-title:hover{
+background:#00d5ff;
+color:#07131f;
+}
+
+.feature-content{
+display:none;
+padding:15px;
+line-height:2;
+color:#d5e2ee;
+background:#091521;
+border-radius:12px;
+margin-top:8px;
+font-size:15px;
 }
 
 .contact{
@@ -291,15 +312,13 @@ width:170px;
 
 <div class="hero">
 
-<!-- استبدلي الرابط برابط شعارك -->
 <img src="logo.png" alt="Wali Links Logo" class="logo">
 
 <h1>Wali Links</h1>
 
 <p>
 نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة.
-نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح، مع تنفيذ المشاريع خلال مدة تعتمد على حجم ومتطلبات كل مشروع.
-نلتزم بالجودة في كل التفاصيل من التصميم إلى التسليم، لضمان موقع جاهز للاستخدام ويظهر بشكل يليق بعملك منذ اللحظة الأولى.
+نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح.
 </p>
 
 <div class="hero-btns">
@@ -316,8 +335,7 @@ width:170px;
 <h2 class="section-title">من نحن</h2>
 
 <p class="section-sub">
-فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، بما يشمل مواقع الأعمال، المتاجر الإلكترونية، والأنظمة المخصصة حسب احتياج كل مشروع.
-نركز على بناء حلول رقمية سريعة، آمنة، وذات تصميم احترافي يراعي تجربة المستخدم بشكل كامل، لضمان ظهور مشروعك بصورة قوية ومواكبة لمعايير الويب الحديثة، بعيدًا عن النماذج القديمة التي لم تعد تناسب متطلبات اليوم.
+فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
 </p>
 
 <div class="about-grid">
@@ -347,7 +365,7 @@ width:170px;
 <h3>ساعات العمل</h3>
 <p>
 من الساعة 5 مساءً حتى 4 صباحاً.
-الوقت الذي يقرر فيه المبرمج أنه كائن ليلي رسمياً.
+لأن المبرمج الطبيعي كائن لا يرى الشمس غالباً.
 </p>
 </div>
 
@@ -360,60 +378,188 @@ width:170px;
 <h2 class="section-title">أنواع المواقع والأسعار</h2>
 
 <p class="section-sub">
-أسعار تقريبية حسب متوسط السوق ويمكن تعديلها حسب حجم المشروع والمتطلبات.
+اضغط على أي ميزة لمعرفة تفاصيلها.
 </p>
 
 <div class="pricing">
 
+<!-- موقع شخصي -->
+
 <div class="price-card">
+
 <h3>موقع شخصي</h3>
 <div class="price">600 ر.س</div>
 
-<ul>
-<li>صفحة تعريفية احترافية</li>
-<li>تصميم متجاوب</li>
-<li>روابط تواصل</li>
-<li>سرعة عالية</li>
-</ul>
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+صفحة تعريفية احترافية
+</div>
+<div class="feature-content">
+صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+تصميم متجاوب
+</div>
+<div class="feature-content">
+الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+روابط تواصل
+</div>
+<div class="feature-content">
+إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+سرعة عالية
+</div>
+<div class="feature-content">
+تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل.
+</div>
+</div>
 
 </div>
 
+<!-- موقع شركة -->
+
 <div class="price-card">
+
 <h3>موقع شركة</h3>
 <div class="price">1500 ر.س</div>
 
-<ul>
-<li>عدة صفحات</li>
-<li>تعريف بالخدمات</li>
-<li>نموذج طلبات</li>
-<li>تصميم احترافي</li>
-</ul>
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+عدة صفحات
+</div>
+<div class="feature-content">
+يشمل صفحات الخدمات والتواصل ومن نحن وغيرها.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+تعريف بالخدمات
+</div>
+<div class="feature-content">
+عرض خدمات الشركة بطريقة منظمة واحترافية.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+نموذج طلبات
+</div>
+<div class="feature-content">
+استقبال طلبات العملاء مباشرة عبر الموقع.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+تصميم احترافي
+</div>
+<div class="feature-content">
+واجهة حديثة تعكس هوية الشركة بشكل قوي.
+</div>
+</div>
 
 </div>
 
+<!-- متجر إلكتروني -->
+
 <div class="price-card">
+
 <h3>متجر إلكتروني</h3>
 <div class="price">3500 ر.س</div>
 
-<ul>
-<li>عرض المنتجات</li>
-<li>سلة شراء</li>
-<li>بوابات دفع</li>
-<li>لوحة تحكم</li>
-</ul>
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+عرض المنتجات
+</div>
+<div class="feature-content">
+إضافة المنتجات مع الصور والأسعار والتفاصيل.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+سلة شراء
+</div>
+<div class="feature-content">
+إمكانية إضافة المنتجات وإتمام الطلب بسهولة.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+بوابات دفع
+</div>
+<div class="feature-content">
+ربط وسائل الدفع الإلكتروني المختلفة.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+لوحة تحكم
+</div>
+<div class="feature-content">
+إدارة المنتجات والطلبات بسهولة من لوحة خاصة.
+</div>
+</div>
 
 </div>
 
+<!-- نظام خاص -->
+
 <div class="price-card">
+
 <h3>نظام خاص</h3>
 <div class="price">5000+ ر.س</div>
 
-<ul>
-<li>أنظمة حجز</li>
-<li>أنظمة إدارة</li>
-<li>خصائص مخصصة</li>
-<li>تطوير كامل حسب الطلب</li>
-</ul>
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+أنظمة حجز
+</div>
+<div class="feature-content">
+أنظمة مواعيد وحجوزات متكاملة حسب النشاط.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+أنظمة إدارة
+</div>
+<div class="feature-content">
+إدارة بيانات وطلبات وتقارير خاصة بالمشروع.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+خصائص مخصصة
+</div>
+<div class="feature-content">
+إضافة أي وظائف خاصة يحتاجها المشروع.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-title" onclick="toggleFeature(this)">
+تطوير كامل حسب الطلب
+</div>
+<div class="feature-content">
+تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته.
+</div>
+</div>
 
 </div>
 
@@ -470,10 +616,30 @@ Esrameliodase42@gmail.com
 <footer>
 
 © 2026 Wali Links - جميع الحقوق محفوظة
-  
-  تنويه : يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السلطة على موقعه و يتم الدفع بعد رؤية الموقع و بعد الدفع يقوم المبرمج بتحويل الملكيه الي العميل.
-  
+
+<br><br>
+
+تنويه:
+يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه،
+ويتم الدفع بعد مشاهدة الموقع وتجربته.
+
 </footer>
+
+<script>
+
+function toggleFeature(element){
+
+const content = element.nextElementSibling;
+
+if(content.style.display === "block"){
+content.style.display = "none";
+}else{
+content.style.display = "block";
+}
+
+}
+
+</script>
 
 </body>
 </html>
