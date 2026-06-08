@@ -382,6 +382,18 @@ width:170px;
 
 .contact{
 padding:30px 20px;
+  .lang-switch{
+position:fixed;
+top:20px;
+left:20px;
+z-index:9999;
+}
+
+.lang-switch button{
+padding:10px 18px;
+font-size:15px;
+border-radius:30px;
+}
 }
 
 }
@@ -390,6 +402,10 @@ padding:30px 20px;
 </head>
 
 <body>
+
+  <div class="lang-switch">
+<button onclick="changeLanguage()">English</button>
+  </div>
 
 <header>
 
@@ -725,5 +741,42 @@ content.style.display = "block";
 
 </script>
 
+  <script>
+
+let currentLang = "ar";
+
+const translations = {
+ar: {
+aboutTitle: "من نحن",
+aboutText: "فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم."
+},
+
+en: {
+aboutTitle: "About Us",
+aboutText: "Wali Links provides modern website design and development services with a focus on speed, security, professional design, and user experience."
+}
+};
+
+function changeLanguage(){
+
+currentLang = currentLang === "ar" ? "en" : "ar";
+
+document.documentElement.lang = currentLang;
+document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+document.querySelector(".lang-switch button").textContent =
+currentLang === "ar" ? "English" : "العربية";
+
+for(const key in translations[currentLang]){
+const element = document.getElementById(key);
+if(element){
+element.textContent = translations[currentLang][key];
+}
+}
+
+}
+
+  </script>
+  
 </body>
 </html>
