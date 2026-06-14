@@ -251,7 +251,7 @@ resize:none;
 height:150px;
 }
 
-button{
+button[type="submit"]{
 padding:16px;
 border:none;
 border-radius:50px;
@@ -260,9 +260,10 @@ font-size:18px;
 font-weight:800;
 cursor:pointer;
 transition:.3s;
+color:#07131f;
 }
 
-button:hover{
+button[type="submit"]:hover{
 transform:translateY(-3px);
 box-shadow:0 0 25px rgba(0,213,255,.4);
 }
@@ -315,23 +316,11 @@ font-size:28px;
 flex-shrink:0;
 }
 
-.whatsapp{
-background:#25D366;
-}
+.whatsapp{ background:#25D366; }
+.email{ background:#ff6b6b; }
+.location-icon{ background:#00d5ff; color:#07131f; }
 
-.email{
-background:#ff6b6b;
-}
-
-.location-icon{
-background:#00d5ff;
-color:#07131f;
-}
-
-.social-item h4{
-margin-bottom:4px;
-font-size:20px;
-}
+.social-item h4{ margin-bottom:4px; font-size:20px; }
 
 .social-item p{
 color:#d3dce5;
@@ -341,9 +330,7 @@ overflow-wrap:break-word;
 max-width:100%;
 }
 
-.location{
-cursor:default;
-}
+.location{ cursor:default; }
 
 .work-time{
 margin-top:25px;
@@ -362,28 +349,35 @@ margin-top:60px;
 line-height:2;
 }
 
+/* ── زر اللغة ── */
+#lang-btn{
+position:fixed;
+top:18px;
+left:18px;
+z-index:999;
+background:#00d5ff;
+color:#07131f;
+border:none;
+border-radius:50px;
+padding:10px 22px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+font-family:'Cairo',sans-serif;
+box-shadow:0 0 18px rgba(0,213,255,.35);
+transition:.3s;
+}
+#lang-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 28px rgba(0,213,255,.55);
+}
+
 @media(max-width:768px){
-
-.hero h1{
-font-size:45px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.logo{
-width:170px;
-}
-
-.contact{
-padding:30px 20px;
-}
-
+.hero h1{ font-size:45px; }
+.hero p{ font-size:18px; }
+.section-title{ font-size:34px; }
+.logo{ width:170px; }
+.contact{ padding:30px 20px; }
 }
 
 </style>
@@ -391,379 +385,290 @@ padding:30px 20px;
 
 <body>
 
+<!-- زر تبديل اللغة -->
+<button id="lang-btn" onclick="toggleLang()">EN</button>
+
 <header>
-
 <div class="hero">
-
-<img src="logo.png" alt="Wali Links Logo" class="logo">
-
-<h1>Wali Links</h1>
-
-<p>
-نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة.
-نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح.
-</p>
-
-<div class="hero-btns">
-<a href="#pricing" class="btn btn-primary">الأسعار</a>
-<a href="#contact" class="btn btn-secondary">اطلب موقعك</a>
+  <img src="logo.png" alt="Wali Links Logo" class="logo">
+  <h1>Wali Links</h1>
+  <p data-ar="نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة. نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح."
+        data-en="We provide modern web design and development services for businesses, stores, and individuals — with sleek designs, fast performance, and a fully responsive experience across all devices. We focus on building professional websites that precisely reflect your brand identity.">
+    نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة.
+    نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح.
+  </p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn btn-primary" data-ar="الأسعار" data-en="Pricing">الأسعار</a>
+    <a href="#contact" class="btn btn-secondary" data-ar="اطلب موقعك" data-en="Order Your Site">اطلب موقعك</a>
+  </div>
 </div>
-
-</div>
-
 </header>
 
+<!-- من نحن -->
 <section id="about">
+  <h2 class="section-title" data-ar="من نحن" data-en="About Us">من نحن</h2>
+  <p class="section-sub"
+     data-ar="فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم."
+     data-en="The Wali Links team delivers modern web design and development services, with a focus on speed, security, professional design, and user experience.">
+    فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
+  </p>
+  <div class="about-grid">
 
-<h2 class="section-title">من نحن</h2>
+    <div class="card">
+      <h3 data-ar="تصميم عصري" data-en="Modern Design">تصميم عصري</h3>
+      <p data-ar="واجهات حديثة ومتجاوبة تعمل على الجوال والكمبيوتر بأفضل شكل ممكن."
+         data-en="Modern, responsive interfaces that work perfectly on mobile and desktop.">
+        واجهات حديثة ومتجاوبة تعمل على الجوال والكمبيوتر بأفضل شكل ممكن.
+      </p>
+    </div>
 
-<p class="section-sub">
-فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
-</p>
+    <div class="card">
+      <h3 data-ar="سرعة وأمان" data-en="Speed & Security">سرعة وأمان</h3>
+      <p data-ar="تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية."
+         data-en="Optimizing site speed, securing it, and ensuring it runs at peak efficiency.">
+        تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية.
+      </p>
+    </div>
 
-<div class="about-grid">
+    <div class="card">
+      <h3 data-ar="مدة التنفيذ" data-en="Delivery Time">مدة التنفيذ</h3>
+      <p data-ar="يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم."
+         data-en="Most projects are completed within 10 to 15 days.">
+        يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم.
+      </p>
+    </div>
 
-<div class="card">
-<h3>تصميم عصري</h3>
-<p>
-واجهات حديثة ومتجاوبة تعمل على الجوال والكمبيوتر بأفضل شكل ممكن.
-</p>
-</div>
+    <div class="card">
+      <h3 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h3>
+      <p data-ar="من الساعة 5 مساءً حتى 4 صباحاً. لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB."
+         data-en="From 5 PM to 4 AM — because a true programmer lives in a cave lit by an RGB monitor.">
+        من الساعة 5 مساءً حتى 4 صباحاً.
+        لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.
+      </p>
+    </div>
 
-<div class="card">
-<h3>سرعة وأمان</h3>
-<p>
-تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية.
-</p>
-</div>
-
-<div class="card">
-<h3>مدة التنفيذ</h3>
-<p>
-يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم.
-</p>
-</div>
-
-<div class="card">
-<h3>ساعات العمل</h3>
-<p>
-من الساعة 5 مساءً حتى 4 صباحاً.
-لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.
-</p>
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- الأسعار -->
 <section id="pricing">
+  <h2 class="section-title" data-ar="أنواع المواقع والأسعار" data-en="Website Types & Pricing">أنواع المواقع والأسعار</h2>
+  <div class="pricing">
 
-<h2 class="section-title">أنواع المواقع والأسعار</h2>
+    <!-- موقع شخصي -->
+    <div class="price-card">
+      <h3 data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</h3>
+      <div class="price">600 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
 
-<div class="pricing">
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="صفحة تعريفية احترافية" data-en="Professional Profile Page">صفحة تعريفية احترافية</div>
+        <div class="feature-content" data-ar="صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب." data-en="A page showcasing your info or services professionally with a modern, responsive design.">صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم متجاوب" data-en="Responsive Design">تصميم متجاوب</div>
+        <div class="feature-content" data-ar="الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل." data-en="The site works flawlessly on mobile, tablet, and desktop.">الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="روابط تواصل" data-en="Social Links">روابط تواصل</div>
+        <div class="feature-content" data-ar="إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني." data-en="Adding all social channels like WhatsApp, Instagram, and email.">إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="سرعة عالية" data-en="High Speed">سرعة عالية</div>
+        <div class="feature-content" data-ar="تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل." data-en="Performance optimization and fast page loading for a better user experience.">تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل.</div>
+      </div>
+    </div>
 
-<!-- موقع شخصي -->
+    <!-- موقع شركة -->
+    <div class="price-card">
+      <h3 data-ar="موقع شركة" data-en="Business Website">موقع شركة</h3>
+      <div class="price">1500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
 
-<div class="price-card">
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="عدة صفحات" data-en="Multiple Pages">عدة صفحات</div>
+        <div class="feature-content" data-ar="يشمل صفحات الخدمات والتواصل ومن نحن وغيرها." data-en="Includes services, contact, about us, and more pages.">يشمل صفحات الخدمات والتواصل ومن نحن وغيرها.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تعريف بالخدمات" data-en="Services Showcase">تعريف بالخدمات</div>
+        <div class="feature-content" data-ar="عرض خدمات الشركة بطريقة منظمة واحترافية." data-en="Presenting company services in an organized and professional way.">عرض خدمات الشركة بطريقة منظمة واحترافية.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="نموذج طلبات" data-en="Request Form">نموذج طلبات</div>
+        <div class="feature-content" data-ar="استقبال طلبات العملاء مباشرة عبر الموقع." data-en="Receiving client requests directly through the website.">استقبال طلبات العملاء مباشرة عبر الموقع.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم احترافي" data-en="Professional Design">تصميم احترافي</div>
+        <div class="feature-content" data-ar="واجهة حديثة تعكس هوية الشركة بشكل قوي." data-en="A modern interface that powerfully reflects the company's brand identity.">واجهة حديثة تعكس هوية الشركة بشكل قوي.</div>
+      </div>
+    </div>
 
-<h3>موقع شخصي</h3>
-<div class="price">600 ر.س</div>
+    <!-- متجر إلكتروني -->
+    <div class="price-card">
+      <h3 data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</h3>
+      <div class="price">3500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
 
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-صفحة تعريفية احترافية
-</div>
-<div class="feature-content">
-صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.
-</div>
-</div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="عرض المنتجات" data-en="Product Listings">عرض المنتجات</div>
+        <div class="feature-content" data-ar="إضافة المنتجات مع الصور والأسعار والتفاصيل." data-en="Adding products with images, prices, and details.">إضافة المنتجات مع الصور والأسعار والتفاصيل.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="سلة شراء" data-en="Shopping Cart">سلة شراء</div>
+        <div class="feature-content" data-ar="إمكانية إضافة المنتجات وإتمام الطلب بسهولة." data-en="Easily add products and complete orders.">إمكانية إضافة المنتجات وإتمام الطلب بسهولة.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="بوابات دفع" data-en="Payment Gateways">بوابات دفع</div>
+        <div class="feature-content" data-ar="ربط وسائل الدفع الإلكتروني المختلفة." data-en="Integrating various online payment methods.">ربط وسائل الدفع الإلكتروني المختلفة.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="لوحة تحكم" data-en="Dashboard">لوحة تحكم</div>
+        <div class="feature-content" data-ar="إدارة المنتجات والطلبات بسهولة من لوحة خاصة." data-en="Easily manage products and orders from a dedicated dashboard.">إدارة المنتجات والطلبات بسهولة من لوحة خاصة.</div>
+      </div>
+    </div>
 
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تصميم متجاوب
-</div>
-<div class="feature-content">
-الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل.
-</div>
-</div>
+    <!-- نظام خاص -->
+    <div class="price-card">
+      <h3 data-ar="نظام خاص" data-en="Custom System">نظام خاص</h3>
+      <div class="price">5000+ <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
 
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-روابط تواصل
-</div>
-<div class="feature-content">
-إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني.
-</div>
-</div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة حجز" data-en="Booking Systems">أنظمة حجز</div>
+        <div class="feature-content" data-ar="أنظمة مواعيد وحجوزات متكاملة حسب النشاط." data-en="Fully integrated appointment and booking systems tailored to your business.">أنظمة مواعيد وحجوزات متكاملة حسب النشاط.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة إدارة" data-en="Management Systems">أنظمة إدارة</div>
+        <div class="feature-content" data-ar="إدارة بيانات وطلبات وتقارير خاصة بالمشروع." data-en="Managing data, orders, and custom reports for your project.">إدارة بيانات وطلبات وتقارير خاصة بالمشروع.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="خصائص مخصصة" data-en="Custom Features">خصائص مخصصة</div>
+        <div class="feature-content" data-ar="إضافة أي وظائف خاصة يحتاجها المشروع." data-en="Adding any custom functionality your project requires.">إضافة أي وظائف خاصة يحتاجها المشروع.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تطوير كامل حسب الطلب" data-en="Fully Custom Development">تطوير كامل حسب الطلب</div>
+        <div class="feature-content" data-ar="تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته." data-en="Building the entire system based on the client's idea and requirements.">تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته.</div>
+      </div>
+    </div>
 
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-سرعة عالية
-</div>
-<div class="feature-content">
-تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل.
-</div>
-</div>
-
-</div>
-
-<!-- موقع شركة -->
-
-<div class="price-card">
-
-<h3>موقع شركة</h3>
-<div class="price">1500 ر.س</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-عدة صفحات
-</div>
-<div class="feature-content">
-يشمل صفحات الخدمات والتواصل ومن نحن وغيرها.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تعريف بالخدمات
-</div>
-<div class="feature-content">
-عرض خدمات الشركة بطريقة منظمة واحترافية.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-نموذج طلبات
-</div>
-<div class="feature-content">
-استقبال طلبات العملاء مباشرة عبر الموقع.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تصميم احترافي
-</div>
-<div class="feature-content">
-واجهة حديثة تعكس هوية الشركة بشكل قوي.
-</div>
-</div>
-
-</div>
-
-<!-- متجر إلكتروني -->
-
-<div class="price-card">
-
-<h3>متجر إلكتروني</h3>
-<div class="price">3500 ر.س</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-عرض المنتجات
-</div>
-<div class="feature-content">
-إضافة المنتجات مع الصور والأسعار والتفاصيل.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-سلة شراء
-</div>
-<div class="feature-content">
-إمكانية إضافة المنتجات وإتمام الطلب بسهولة.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-بوابات دفع
-</div>
-<div class="feature-content">
-ربط وسائل الدفع الإلكتروني المختلفة.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-لوحة تحكم
-</div>
-<div class="feature-content">
-إدارة المنتجات والطلبات بسهولة من لوحة خاصة.
-</div>
-</div>
-
-</div>
-
-<!-- نظام خاص -->
-
-<div class="price-card">
-
-<h3>نظام خاص</h3>
-<div class="price">5000+ ر.س</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-أنظمة حجز
-</div>
-<div class="feature-content">
-أنظمة مواعيد وحجوزات متكاملة حسب النشاط.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-أنظمة إدارة
-</div>
-<div class="feature-content">
-إدارة بيانات وطلبات وتقارير خاصة بالمشروع.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-خصائص مخصصة
-</div>
-<div class="feature-content">
-إضافة أي وظائف خاصة يحتاجها المشروع.
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-title" onclick="toggleFeature(this)">
-تطوير كامل حسب الطلب
-</div>
-<div class="feature-content">
-تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته.
-</div>
-</div>
-
-</div>
-
-</div>
-    
+  </div>
 </section>
 
+<!-- التواصل -->
 <section id="contact">
+  <div class="contact">
 
-<div class="contact">
+    <h2 class="section-title" data-ar="اطلب موقعك الآن" data-en="Order Your Website Now">اطلب موقعك الآن</h2>
+    <p class="section-sub"
+       data-ar="قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت."
+       data-en="Send us your project details and we'll get back to you as soon as possible.">
+      قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
+    </p>
 
-<h2 class="section-title">اطلب موقعك الآن</h2>
+    <form action="https://formspree.io/f/xdablqqn" method="POST">
+      <input type="text" name="name" data-ar-placeholder="الاسم الكامل" data-en-placeholder="Full Name" placeholder="الاسم الكامل" required>
+      <input type="email" name="email" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email Address" placeholder="البريد الإلكتروني" required>
+      <input type="tel" name="phone" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone Number" placeholder="رقم الهاتف">
+      <select name="service" required>
+        <option value="" data-ar="اختر نوع الموقع" data-en="Select Website Type">اختر نوع الموقع</option>
+        <option data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
+        <option data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
+        <option data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
+        <option data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
+      </select>
+      <textarea name="message" data-ar-placeholder="اكتب تفاصيل مشروعك..." data-en-placeholder="Write your project details..." placeholder="اكتب تفاصيل مشروعك..." required></textarea>
+      <input type="hidden" name="_subject" value="طلب جديد من موقع Wali Links">
+      <button type="submit" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
+    </form>
 
-<p class="section-sub">
-قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
-</p>
+    <div class="social-contact">
+      <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+      <div class="social-box">
 
-<form action="https://formspree.io/f/xdablqqn" method="POST">
+        <a href="https://wa.me/249100942327" target="_blank" class="social-item">
+          <div class="social-icon whatsapp">💬</div>
+          <div>
+            <h4 data-ar="واتساب" data-en="WhatsApp">واتساب</h4>
+            <p>+249 10 094 2327</p>
+          </div>
+        </a>
 
-<input type="text" name="name" placeholder="الاسم الكامل" required>
+        <a href="mailto:esrasaifeldeen@gmail.com" class="social-item">
+          <div class="social-icon email">📧</div>
+          <div>
+            <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+            <p>esrasaifeldeen@gmail.com</p>
+          </div>
+        </a>
 
-<input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <div class="social-item location">
+          <div class="social-icon location-icon">📍</div>
+          <div>
+            <h4 data-ar="الموقع" data-en="Location">الموقع</h4>
+            <p data-ar="المدينة المنورة" data-en="Madinah, Saudi Arabia">المدينة المنورة</p>
+          </div>
+        </div>
 
-<input type="tel" name="phone" placeholder="رقم الهاتف">
+      </div>
+    </div>
 
-<select name="service" required>
-<option value="">اختر نوع الموقع</option>
-<option>موقع شخصي</option>
-<option>موقع شركة</option>
-<option>متجر إلكتروني</option>
-<option>نظام خاص</option>
-</select>
+    <div class="work-time"
+         data-ar="ساعات العمل: من 5 مساءً حتى 4 صباحاً"
+         data-en="Working Hours: 5 PM to 4 AM">
+      ساعات العمل: من 5 مساءً حتى 4 صباحاً
+    </div>
 
-<textarea name="message" placeholder="اكتب تفاصيل مشروعك..." required></textarea>
-
-<input type="hidden" name="_subject" value="طلب جديد من موقع Wali Links">
-
-<button type="submit">إرسال الطلب</button>
-
-</form>
-
-<div class="social-contact">
-
-<h3>تواصل معنا</h3>
-
-<div class="social-box">
-
-<a href="https://wa.me/249100942327" target="_blank" class="social-item">
-
-<div class="social-icon whatsapp">
-💬
-</div>
-
-<div>
-<h4>واتساب</h4>
-<p>+249 10 094 2327</p>
-</div>
-
-</a>
-
-<a href="mailto:esrasaifeldeen@gmail.com" class="social-item">
-
-<div class="social-icon email">
-📧
-</div>
-
-<div>
-<h4>البريد الإلكتروني</h4>
-<p>esrasaifeldeen@gmail.com</p>
-</div>
-
-</a>
-
-<div class="social-item location">
-
-<div class="social-icon location-icon">
-📍
-</div>
-
-<div>
-<h4>الموقع</h4>
-<p>المدينة المنورة</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="work-time">
-ساعات العمل: من 5 مساءً حتى 4 صباحاً
-</div>
-
-</div>
-
+  </div>
 </section>
 
 <footer>
-
-© 2026 Wali Links - جميع الحقوق محفوظة
-
-<br><br>
-
-تنويه:
-يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه،
-ويتم الدفع بعد مشاهدة الموقع وتجربته.
-
+  <span data-ar="© 2026 Wali Links - جميع الحقوق محفوظة" data-en="© 2026 Wali Links - All Rights Reserved">© 2026 Wali Links - جميع الحقوق محفوظة</span>
+  <br><br>
+  <span data-ar="تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته."
+        data-en="Note: All clients are required to purchase their own domain to have full control over their website. Payment is made after viewing and testing the site.">
+    تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته.
+  </span>
 </footer>
 
 <script>
 
-function toggleFeature(element){
+let currentLang = 'ar';
 
-const content = element.nextElementSibling;
+function toggleLang() {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  const isEn = currentLang === 'en';
 
-if(content.style.display === "block"){
-content.style.display = "none";
-}else{
-content.style.display = "block";
+  // اتجاه الصفحة والعنوان
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+  document.querySelector('#lang-btn').textContent = isEn ? 'AR' : 'EN';
+  document.title = isEn
+    ? 'Wali Links | Web Design & Development'
+    : 'Wali Links | تصميم وبيع المواقع الإلكترونية';
+
+  // كل العناصر التي تحمل data-ar / data-en
+  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+    el.textContent = isEn ? el.dataset.en : el.dataset.ar;
+  });
+
+  // placeholders (input / textarea)
+  document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(el => {
+    el.placeholder = isEn ? el.dataset.enPlaceholder : el.dataset.arPlaceholder;
+  });
+
+  // خيارات القائمة المنسدلة
+  document.querySelectorAll('select option[data-ar][data-en]').forEach(opt => {
+    opt.textContent = isEn ? opt.dataset.en : opt.dataset.ar;
+  });
+
+  // محاذاة الـ features
+  document.querySelectorAll('.feature').forEach(f => {
+    f.style.textAlign = isEn ? 'left' : 'right';
+  });
 }
 
+function toggleFeature(element) {
+  const content = element.nextElementSibling;
+  content.style.display = content.style.display === 'block' ? 'none' : 'block';
 }
 
 </script>
 
 </body>
-    </html>
+            </html>
