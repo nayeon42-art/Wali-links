@@ -230,7 +230,7 @@ max-width:900px;
 margin:auto;
 }
 
-form{
+#contact-form{
 display:flex;
 flex-direction:column;
 gap:20px;
@@ -251,7 +251,7 @@ resize:none;
 height:150px;
 }
 
-button[type="submit"]{
+#submit-btn{
 padding:16px;
 border:none;
 border-radius:50px;
@@ -263,9 +263,46 @@ transition:.3s;
 color:#07131f;
 }
 
-button[type="submit"]:hover{
+#submit-btn:hover{
 transform:translateY(-3px);
 box-shadow:0 0 25px rgba(0,213,255,.4);
+}
+
+#submit-btn:disabled{
+opacity:.6;
+cursor:not-allowed;
+transform:none;
+}
+
+/* رسالة النجاح */
+#success-msg{
+display:none;
+text-align:center;
+padding:40px 20px;
+animation: fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.success-icon{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.success-title{
+font-size:28px;
+font-weight:800;
+color:#00d5ff;
+margin-bottom:12px;
+}
+
+.success-text{
+font-size:17px;
+color:#b7c5d4;
+line-height:2;
 }
 
 .social-contact{
@@ -561,21 +598,28 @@ box-shadow:0 0 28px rgba(0,213,255,.55);
       قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
     </p>
 
-    <form action="https://formspree.io/f/xdablqqn" method="POST">
-      <input type="text" name="name" data-ar-placeholder="الاسم الكامل" data-en-placeholder="Full Name" placeholder="الاسم الكامل" required>
-      <input type="email" name="email" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email Address" placeholder="البريد الإلكتروني" required>
-      <input type="tel" name="phone" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone Number" placeholder="رقم الهاتف">
-      <select name="service" required>
+    <!-- الفورم -->
+    <div id="contact-form">
+      <input type="text" id="f-name" data-ar-placeholder="الاسم الكامل" data-en-placeholder="Full Name" placeholder="الاسم الكامل" required>
+      <input type="email" id="f-email" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email Address" placeholder="البريد الإلكتروني" required>
+      <input type="tel" id="f-phone" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone Number" placeholder="رقم الهاتف">
+      <select id="f-service" required>
         <option value="" data-ar="اختر نوع الموقع" data-en="Select Website Type">اختر نوع الموقع</option>
-        <option data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
-        <option data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
-        <option data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
-        <option data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
+        <option value="موقع شخصي" data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
+        <option value="موقع شركة" data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
+        <option value="متجر إلكتروني" data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
+        <option value="نظام خاص" data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
       </select>
-      <textarea name="message" data-ar-placeholder="اكتب تفاصيل مشروعك..." data-en-placeholder="Write your project details..." placeholder="اكتب تفاصيل مشروعك..." required></textarea>
-      <input type="hidden" name="_subject" value="طلب جديد من موقع Wali Links">
-      <button type="submit" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
-    </form>
+      <textarea id="f-message" data-ar-placeholder="اكتب تفاصيل مشروعك..." data-en-placeholder="Write your project details..." placeholder="اكتب تفاصيل مشروعك..." required></textarea>
+      <button id="submit-btn" onclick="submitForm()" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
+    </div>
+
+    <!-- رسالة النجاح - مخفية في البداية -->
+    <div id="success-msg">
+      <div class="success-icon">✅</div>
+      <div class="success-title" data-ar="تم إرسال طلبك بنجاح!" data-en="Your request was sent successfully!">تم إرسال طلبك بنجاح!</div>
+      <div class="success-text" data-ar="شكراً لك، سيتم التواصل معك في أقرب وقت ممكن." data-en="Thank you! We'll get back to you as soon as possible.">شكراً لك، سيتم التواصل معك في أقرب وقت ممكن.</div>
+    </div>
 
     <div class="social-contact">
       <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
@@ -634,7 +678,6 @@ function toggleLang() {
   currentLang = currentLang === 'ar' ? 'en' : 'ar';
   const isEn = currentLang === 'en';
 
-  // اتجاه الصفحة والعنوان
   document.documentElement.lang = currentLang;
   document.documentElement.dir = isEn ? 'ltr' : 'rtl';
   document.querySelector('#lang-btn').textContent = isEn ? 'AR' : 'EN';
@@ -642,22 +685,18 @@ function toggleLang() {
     ? 'Wali Links | Web Design & Development'
     : 'Wali Links | تصميم وبيع المواقع الإلكترونية';
 
-  // كل العناصر التي تحمل data-ar / data-en
   document.querySelectorAll('[data-ar][data-en]').forEach(el => {
     el.textContent = isEn ? el.dataset.en : el.dataset.ar;
   });
 
-  // placeholders (input / textarea)
   document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(el => {
     el.placeholder = isEn ? el.dataset.enPlaceholder : el.dataset.arPlaceholder;
   });
 
-  // خيارات القائمة المنسدلة
   document.querySelectorAll('select option[data-ar][data-en]').forEach(opt => {
     opt.textContent = isEn ? opt.dataset.en : opt.dataset.ar;
   });
 
-  // محاذاة الـ features
   document.querySelectorAll('.feature').forEach(f => {
     f.style.textAlign = isEn ? 'left' : 'right';
   });
@@ -668,7 +707,45 @@ function toggleFeature(element) {
   content.style.display = content.style.display === 'block' ? 'none' : 'block';
 }
 
+async function submitForm() {
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const service = document.getElementById('f-service').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  // تحقق بسيط
+  if (!name || !email || !service || !message) {
+    alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = currentLang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+
+  try {
+    const res = await fetch('https://formspree.io/f/xdablqqn', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, service, message, _subject: 'طلب جديد من موقع Wali Links' })
+    });
+
+    if (res.ok) {
+      // إخفاء الفورم وإظهار رسالة النجاح
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      throw new Error('فشل الإرسال');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = currentLang === 'ar' ? 'إرسال الطلب' : 'Send Request';
+    alert(currentLang === 'ar' ? 'حدث خطأ، حاول مرة أخرى.' : 'Something went wrong, please try again.');
+  }
+}
+
 </script>
 
 </body>
-            </html>
+  </html>
