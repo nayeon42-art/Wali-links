@@ -30,14 +30,20 @@ a{
 text-decoration:none;
 }
 
+/* ================= HERO ================= */
+
 header{
 min-height:100vh;
+
 background:
-linear-gradient(rgba(4,10,18,.88),rgba(4,10,18,.92)),
-url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop') center/cover;
+linear-gradient(rgba(4,10,18,.88),rgba(4,10,18,.94)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')
+center/cover;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 padding:40px;
 text-align:center;
 }
@@ -46,20 +52,190 @@ text-align:center;
 max-width:1000px;
 }
 
-.logo{
-width:220px;
-margin-bottom:25px;
-filter:drop-shadow(0 0 20px rgba(0,255,255,.25));
-border-radius:20px;
+
+/* ================= LOGO ================= */
+
+.logo-box{
+position:relative;
+width:250px;
+height:250px;
+margin:0 auto 30px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:38px;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,213,255,.25),
+rgba(116,65,255,.25),
+rgba(0,213,255,.08)
+);
+
+border:1px solid rgba(0,213,255,.45);
+
+box-shadow:
+0 0 25px rgba(0,213,255,.18),
+inset 0 0 35px rgba(0,213,255,.08);
+
+overflow:hidden;
+
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
 }
+
+
+/* التدرج المتحرك */
+
+.logo-box::before{
+content:"";
+
+position:absolute;
+
+width:180%;
+height:180%;
+
+background:
+conic-gradient(
+from 0deg,
+transparent,
+rgba(0,213,255,.5),
+rgba(130,70,255,.5),
+transparent
+);
+
+animation:logoRotate 8s linear infinite;
+}
+
+
+/* الطبقة الداخلية */
+
+.logo-box::after{
+content:"";
+
+position:absolute;
+inset:3px;
+
+border-radius:35px;
+
+background:
+linear-gradient(
+145deg,
+#0b1d2d,
+#07131f 55%,
+#10152d
+);
+}
+
+
+/* الصورة */
+
+.logo{
+position:relative;
+z-index:3;
+
+width:190px;
+height:190px;
+
+object-fit:contain;
+
+border-radius:28px;
+
+filter:
+drop-shadow(0 0 12px rgba(0,213,255,.35))
+drop-shadow(0 0 30px rgba(110,70,255,.2));
+
+transition:.4s ease;
+}
+
+
+/* الإضاءة خلف اللوغو */
+
+.logo-glow{
+position:absolute;
+z-index:1;
+
+width:150px;
+height:150px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,213,255,.35),
+rgba(110,70,255,.2),
+transparent 70%
+);
+
+filter:blur(20px);
+
+animation:logoPulse 3s ease-in-out infinite;
+}
+
+
+/* حركة التدرج */
+
+@keyframes logoRotate{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+/* نبض الإضاءة */
+
+@keyframes logoPulse{
+
+0%,100%{
+transform:scale(.9);
+opacity:.6;
+}
+
+50%{
+transform:scale(1.15);
+opacity:1;
+}
+
+}
+
+
+/* تأثير الماوس */
+
+.logo-box:hover{
+transform:translateY(-6px);
+
+box-shadow:
+0 0 35px rgba(0,213,255,.3),
+0 0 70px rgba(100,70,255,.12),
+inset 0 0 40px rgba(0,213,255,.1);
+}
+
+.logo-box:hover .logo{
+transform:scale(1.05);
+}
+
+
+/* ================= HERO TEXT ================= */
 
 .hero h1{
 font-size:65px;
 font-weight:800;
 margin-bottom:15px;
+
 background:linear-gradient(to left,#00d5ff,#ffffff);
 background-clip:text;
 -webkit-background-clip:text;
+
 color:transparent;
 -webkit-text-fill-color:transparent;
 }
@@ -107,6 +283,9 @@ background:#00d5ff;
 color:#07131f;
 }
 
+
+/* ================= SECTIONS ================= */
+
 section{
 padding:90px 8%;
 }
@@ -127,6 +306,9 @@ color:#b7c5d4;
 margin-bottom:60px;
 font-size:18px;
 }
+
+
+/* ================= ABOUT ================= */
 
 .about-grid{
 display:grid;
@@ -158,6 +340,28 @@ color:#00d5ff;
 line-height:2;
 color:#d1dbe5;
 }
+
+
+/* ================= CATEGORY ================= */
+
+.category-title{
+margin-top:70px;
+margin-bottom:30px;
+font-size:30px;
+color:#00d5ff;
+text-align:center;
+}
+
+.category-description{
+text-align:center;
+max-width:800px;
+margin:0 auto 35px;
+line-height:2;
+color:#b7c5d4;
+}
+
+
+/* ================= PRICING ================= */
 
 .pricing{
 display:grid;
@@ -192,6 +396,13 @@ color:#00d5ff;
 margin-bottom:25px;
 }
 
+.price-note{
+font-size:14px;
+color:#8fa1b3;
+margin-top:-15px;
+margin-bottom:25px;
+}
+
 .feature{
 margin-bottom:15px;
 text-align:right;
@@ -222,6 +433,9 @@ margin-top:8px;
 font-size:15px;
 }
 
+
+/* ================= CONTACT ================= */
+
 .contact{
 background:#08111c;
 border-radius:30px;
@@ -236,7 +450,9 @@ flex-direction:column;
 gap:20px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
 padding:16px;
 border:none;
 outline:none;
@@ -244,6 +460,11 @@ border-radius:14px;
 background:#122233;
 color:white;
 font-size:16px;
+}
+
+select option{
+background:#122233;
+color:white;
 }
 
 textarea{
@@ -274,17 +495,28 @@ cursor:not-allowed;
 transform:none;
 }
 
-/* رسالة النجاح */
+
+/* ================= SUCCESS ================= */
+
 #success-msg{
 display:none;
 text-align:center;
 padding:40px 20px;
-animation: fadeIn .5s ease;
+animation:fadeIn .5s ease;
 }
 
 @keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 .success-icon{
@@ -304,6 +536,9 @@ font-size:17px;
 color:#b7c5d4;
 line-height:2;
 }
+
+
+/* ================= SOCIAL ================= */
 
 .social-contact{
 margin-top:40px;
@@ -353,11 +588,23 @@ font-size:28px;
 flex-shrink:0;
 }
 
-.whatsapp{ background:#25D366; }
-.email{ background:#ff6b6b; }
-.location-icon{ background:#00d5ff; color:#07131f; }
+.whatsapp{
+background:#25D366;
+}
 
-.social-item h4{ margin-bottom:4px; font-size:20px; }
+.email{
+background:#ff6b6b;
+}
+
+.location-icon{
+background:#00d5ff;
+color:#07131f;
+}
+
+.social-item h4{
+margin-bottom:4px;
+font-size:20px;
+}
 
 .social-item p{
 color:#d3dce5;
@@ -367,7 +614,9 @@ overflow-wrap:break-word;
 max-width:100%;
 }
 
-.location{ cursor:default; }
+.location{
+cursor:default;
+}
 
 .work-time{
 margin-top:25px;
@@ -376,6 +625,9 @@ font-size:18px;
 line-height:2;
 color:#c6d4df;
 }
+
+
+/* ================= FOOTER ================= */
 
 footer{
 padding:35px;
@@ -386,367 +638,2385 @@ margin-top:60px;
 line-height:2;
 }
 
-/* ── زر اللغة ── */
+
+/* ================= LANGUAGE BUTTON ================= */
+
 #lang-btn{
 position:fixed;
 top:18px;
 left:18px;
 z-index:999;
+
 background:#00d5ff;
 color:#07131f;
+
 border:none;
 border-radius:50px;
+
 padding:10px 22px;
+
 font-size:15px;
 font-weight:700;
+
 cursor:pointer;
 font-family:'Cairo',sans-serif;
+
 box-shadow:0 0 18px rgba(0,213,255,.35);
 transition:.3s;
 }
+
 #lang-btn:hover{
 transform:translateY(-2px);
 box-shadow:0 0 28px rgba(0,213,255,.55);
 }
 
+
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
-.hero h1{ font-size:45px; }
-.hero p{ font-size:18px; }
-.section-title{ font-size:34px; }
-.logo{ width:170px; }
-.contact{ padding:30px 20px; }
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.logo-box{
+width:190px;
+height:190px;
+border-radius:30px;
+}
+
+.logo{
+width:145px;
+height:145px;
+border-radius:22px;
+}
+
+.contact{
+padding:30px 20px;
+}
+
+.price-card{
+padding:28px 20px;
+}
+
+}
+
+
+/* ================= SPECIAL BADGE ================= */
+
+.badge{
+display:inline-block;
+background:#00d5ff;
+color:#07131f;
+padding:5px 13px;
+border-radius:50px;
+font-size:12px;
+font-weight:800;
+margin-bottom:15px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- زر تبديل اللغة -->
+<!-- زر اللغة -->
+
 <button id="lang-btn" onclick="toggleLang()">EN</button>
 
+
+<!-- ================= HERO ================= -->
+
 <header>
+
 <div class="hero">
-  <img src="logo.png" alt="Wali Links Logo" class="logo">
-  <h1>Wali Links</h1>
-  <p data-ar="نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة. نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح."
-        data-en="We provide modern web design and development services for businesses, stores, and individuals — with sleek designs, fast performance, and a fully responsive experience across all devices. We focus on building professional websites that precisely reflect your brand identity.">
-    نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بتصاميم عصرية، أداء سريع، وتجربة متوافقة مع جميع الأجهزة.
-    نركّز على بناء مواقع احترافية تعكس هوية العلامة التجارية بشكل دقيق وواضح.
-  </p>
-  <div class="hero-btns">
-    <a href="#pricing" class="btn btn-primary" data-ar="الأسعار" data-en="Pricing">الأسعار</a>
-    <a href="#contact" class="btn btn-secondary" data-ar="اطلب موقعك" data-en="Order Your Site">اطلب موقعك</a>
-  </div>
+
+<div class="logo-box">
+
+<div class="logo-glow"></div>
+
+<img
+src="logo.png"
+alt="Wali Links Logo"
+class="logo">
+
 </div>
+
+
+<h1>Wali Links</h1>
+
+<p
+data-ar="نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بالإضافة إلى مواقع الهدايا والمفاجآت والمناسبات التفاعلية."
+data-en="We provide modern web design and development services for businesses, stores, and individuals, along with interactive gift, surprise, and event websites.">
+
+نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بالإضافة إلى مواقع الهدايا والمفاجآت والمناسبات التفاعلية.
+
+</p>
+
+
+<div class="hero-btns">
+
+<a
+href="#pricing"
+class="btn btn-primary"
+data-ar="الأسعار"
+data-en="Pricing">
+
+الأسعار
+
+</a>
+
+
+<a
+href="#contact"
+class="btn btn-secondary"
+data-ar="اطلب موقعك"
+data-en="Order Your Site">
+
+اطلب موقعك
+
+</a>
+
+</div>
+
+</div>
+
 </header>
 
-<!-- من نحن -->
+
+<!-- ================= ABOUT ================= -->
+
 <section id="about">
-  <h2 class="section-title" data-ar="من نحن" data-en="About Us">من نحن</h2>
-  <p class="section-sub"
-     data-ar="فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم."
-     data-en="The Wali Links team delivers modern web design and development services, with a focus on speed, security, professional design, and user experience.">
-    فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
-  </p>
-  <div class="about-grid">
 
-    <div class="card">
-      <h3 data-ar="تصميم عصري" data-en="Modern Design">تصميم عصري</h3>
-      <p data-ar="واجهات حديثة ومتجاوبة تعمل على الجوال والكمبيوتر بأفضل شكل ممكن."
-         data-en="Modern, responsive interfaces that work perfectly on mobile and desktop.">
-        واجهات حديثة ومتجاوبة تعمل على الجوال والكمبيوتر بأفضل شكل ممكن.
-      </p>
-    </div>
+<h2
+class="section-title"
+data-ar="من نحن"
+data-en="About Us">
 
-    <div class="card">
-      <h3 data-ar="سرعة وأمان" data-en="Speed & Security">سرعة وأمان</h3>
-      <p data-ar="تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية."
-         data-en="Optimizing site speed, securing it, and ensuring it runs at peak efficiency.">
-        تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية.
-      </p>
-    </div>
+من نحن
 
-    <div class="card">
-      <h3 data-ar="مدة التنفيذ" data-en="Delivery Time">مدة التنفيذ</h3>
-      <p data-ar="يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم."
-         data-en="Most projects are completed within 10 to 15 days.">
-        يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم.
-      </p>
-    </div>
+</h2>
 
-    <div class="card">
-      <h3 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h3>
-      <p data-ar="من الساعة 5 مساءً حتى 4 صباحاً. لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB."
-         data-en="From 5 PM to 4 AM — because a true programmer lives in a cave lit by an RGB monitor.">
-        من الساعة 5 مساءً حتى 4 صباحاً.
-        لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.
-      </p>
-  
-    </div>
 
-  </div>
+<p
+class="section-sub"
+data-ar="فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم."
+data-en="Wali Links provides modern web design and development services, focusing on speed, security, professional design, and user experience.">
+
+فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
+
+</p>
+
+
+<div class="about-grid">
+
+
+<div class="card">
+
+<h3
+data-ar="تصميم عصري"
+data-en="Modern Design">
+
+تصميم عصري
+
+</h3>
+
+
+<p
+data-ar="واجهات حديثة ومتجاوبة تعمل على الجوال والتابلت والكمبيوتر."
+data-en="Modern responsive interfaces that work across mobile, tablet, and desktop.">
+
+واجهات حديثة ومتجاوبة تعمل على الجوال والتابلت والكمبيوتر.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3
+data-ar="سرعة وأمان"
+data-en="Speed & Security">
+
+سرعة وأمان
+
+</h3>
+
+
+<p
+data-ar="تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية."
+data-en="Optimized performance, security, and efficient website operation.">
+
+تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3
+data-ar="مدة التنفيذ"
+data-en="Delivery Time">
+
+مدة التنفيذ
+
+</h3>
+
+
+<p
+data-ar="يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم."
+data-en="Most projects are completed within 10 to 15 days.">
+
+يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3
+data-ar="ساعات العمل"
+data-en="Working Hours">
+
+ساعات العمل
+
+</h3>
+
+
+<p
+data-ar="من الساعة 5 مساءً حتى 4 صباحاً. لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB."
+data-en="From 5 PM to 4 AM — because a true programmer apparently lives in a cave lit by an RGB monitor.">
+
+من الساعة 5 مساءً حتى 4 صباحاً.
+لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.
+
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- الأسعار -->
+
+<!-- ================= PRICING ================= -->
+
 <section id="pricing">
-  <h2 class="section-title" data-ar="أنواع المواقع والأسعار" data-en="Website Types & Pricing">أنواع المواقع والأسعار</h2>
-  <div class="pricing">
 
-    <!-- موقع شخصي -->
-    <div class="price-card">
-      <h3 data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</h3>
-      <div class="price">600 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<h2
+class="section-title"
+data-ar="أنواع المواقع والأسعار"
+data-en="Website Types & Pricing">
 
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="صفحة تعريفية احترافية" data-en="Professional Profile Page">صفحة تعريفية احترافية</div>
-        <div class="feature-content" data-ar="صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب." data-en="A page showcasing your info or services professionally with a modern, responsive design.">صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم متجاوب" data-en="Responsive Design">تصميم متجاوب</div>
-        <div class="feature-content" data-ar="الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل." data-en="The site works flawlessly on mobile, tablet, and desktop.">الموقع يعمل على الجوال والتابلت والكمبيوتر بدون مشاكل.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="روابط تواصل" data-en="Social Links">روابط تواصل</div>
-        <div class="feature-content" data-ar="إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني." data-en="Adding all social channels like WhatsApp, Instagram, and email.">إضافة جميع وسائل التواصل مثل واتساب وإنستقرام والبريد الإلكتروني.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="سرعة عالية" data-en="High Speed">سرعة عالية</div>
-        <div class="feature-content" data-ar="تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل." data-en="Performance optimization and fast page loading for a better user experience.">تحسين الأداء وسرعة تحميل الصفحات لتجربة استخدام أفضل.</div>
-      </div>
-    </div>
+أنواع المواقع والأسعار
 
-    <!-- موقع شركة -->
-    <div class="price-card">
-      <h3 data-ar="موقع شركة" data-en="Business Website">موقع شركة</h3>
-      <div class="price">1500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+</h2>
 
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="عدة صفحات" data-en="Multiple Pages">عدة صفحات</div>
-        <div class="feature-content" data-ar="يشمل صفحات الخدمات والتواصل ومن نحن وغيرها." data-en="Includes services, contact, about us, and more pages.">يشمل صفحات الخدمات والتواصل ومن نحن وغيرها.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تعريف بالخدمات" data-en="Services Showcase">تعريف بالخدمات</div>
-        <div class="feature-content" data-ar="عرض خدمات الشركة بطريقة منظمة واحترافية." data-en="Presenting company services in an organized and professional way.">عرض خدمات الشركة بطريقة منظمة واحترافية.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="نموذج طلبات" data-en="Request Form">نموذج طلبات</div>
-        <div class="feature-content" data-ar="استقبال طلبات العملاء مباشرة عبر الموقع." data-en="Receiving client requests directly through the website.">استقبال طلبات العملاء مباشرة عبر الموقع.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم احترافي" data-en="Professional Design">تصميم احترافي</div>
-        <div class="feature-content" data-ar="واجهة حديثة تعكس هوية الشركة بشكل قوي." data-en="A modern interface that powerfully reflects the company's brand identity.">واجهة حديثة تعكس هوية الشركة بشكل قوي.</div>
-      </div>
-    </div>
 
-    <!-- متجر إلكتروني -->
-    <div class="price-card">
-      <h3 data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</h3>
-      <div class="price">3500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<p
+class="section-sub"
+data-ar="نقدم أنواعاً مختلفة من المواقع، من المواقع الشخصية والتجارية إلى المواقع التفاعلية المصممة للهدايا والمناسبات الخاصة."
+data-en="We offer different website types, from personal and business websites to interactive websites designed for gifts and special occasions.">
 
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="عرض المنتجات" data-en="Product Listings">عرض المنتجات</div>
-        <div class="feature-content" data-ar="إضافة المنتجات مع الصور والأسعار والتفاصيل." data-en="Adding products with images, prices, and details.">إضافة المنتجات مع الصور والأسعار والتفاصيل.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="سلة شراء" data-en="Shopping Cart">سلة شراء</div>
-        <div class="feature-content" data-ar="إمكانية إضافة المنتجات وإتمام الطلب بسهولة." data-en="Easily add products and complete orders.">إمكانية إضافة المنتجات وإتمام الطلب بسهولة.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="بوابات دفع" data-en="Payment Gateways">بوابات دفع</div>
-        <div class="feature-content" data-ar="ربط وسائل الدفع الإلكتروني المختلفة." data-en="Integrating various online payment methods.">ربط وسائل الدفع الإلكتروني المختلفة.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="لوحة تحكم" data-en="Dashboard">لوحة تحكم</div>
-        <div class="feature-content" data-ar="إدارة المنتجات والطلبات بسهولة من لوحة خاصة." data-en="Easily manage products and orders from a dedicated dashboard.">إدارة المنتجات والطلبات بسهولة من لوحة خاصة.</div>
-      </div>
-    </div>
+نقدم أنواعاً مختلفة من المواقع، من المواقع الشخصية والتجارية إلى المواقع التفاعلية المصممة للهدايا والمناسبات الخاصة.
 
-    <!-- نظام خاص -->
-    <div class="price-card">
-      <h3 data-ar="نظام خاص" data-en="Custom System">نظام خاص</h3>
-      <div class="price">5000+ <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+</p>
 
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة حجز" data-en="Booking Systems">أنظمة حجز</div>
-        <div class="feature-content" data-ar="أنظمة مواعيد وحجوزات متكاملة حسب النشاط." data-en="Fully integrated appointment and booking systems tailored to your business.">أنظمة مواعيد وحجوزات متكاملة حسب النشاط.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة إدارة" data-en="Management Systems">أنظمة إدارة</div>
-        <div class="feature-content" data-ar="إدارة بيانات وطلبات وتقارير خاصة بالمشروع." data-en="Managing data, orders, and custom reports for your project.">إدارة بيانات وطلبات وتقارير خاصة بالمشروع.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="خصائص مخصصة" data-en="Custom Features">خصائص مخصصة</div>
-        <div class="feature-content" data-ar="إضافة أي وظائف خاصة يحتاجها المشروع." data-en="Adding any custom functionality your project requires.">إضافة أي وظائف خاصة يحتاجها المشروع.</div>
-      </div>
-      <div class="feature">
-        <div class="feature-title" onclick="toggleFeature(this)" data-ar="تطوير كامل حسب الطلب" data-en="Fully Custom Development">تطوير كامل حسب الطلب</div>
-        <div class="feature-content" data-ar="تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته." data-en="Building the entire system based on the client's idea and requirements.">تنفيذ النظام بالكامل بناءً على فكرة العميل واحتياجاته.</div>
-      </div>
-    </div>
 
-  </div>
+<!-- ================= BUSINESS WEBSITES ================= -->
+
+<h3
+class="category-title"
+data-ar="مواقع الأعمال والمشاريع"
+data-en="Business & Project Websites">
+
+مواقع الأعمال والمشاريع
+
+</h3>
+
+
+<div class="pricing">
+
+
+<!-- PERSONAL -->
+
+<div class="price-card">
+
+<h3
+data-ar="موقع شخصي"
+data-en="Personal Website">
+
+موقع شخصي
+
+</h3>
+
+
+<div class="price">
+
+600
+
+<span
+data-ar="ر.س"
+data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div
+class="price-note"
+data-ar="باقة أساسية"
+data-en="Basic package">
+
+باقة أساسية
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="صفحة تعريفية احترافية"
+data-en="Professional Profile Page">
+
+صفحة تعريفية احترافية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب."
+data-en="A professional page showcasing your information or services with a modern responsive design.">
+
+صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تصميم متجاوب"
+data-en="Responsive Design">
+
+تصميم متجاوب
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="الموقع يعمل على الجوال والتابلت والكمبيوتر."
+data-en="The website works across mobile, tablet, and desktop.">
+
+الموقع يعمل على الجوال والتابلت والكمبيوتر.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="روابط تواصل"
+data-en="Social Links">
+
+روابط تواصل
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة واتساب وإنستقرام والبريد الإلكتروني وغيرها."
+data-en="WhatsApp, Instagram, email, and other contact links.">
+
+إضافة واتساب وإنستقرام والبريد الإلكتروني وغيرها.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="سرعة عالية"
+data-en="High Speed">
+
+سرعة عالية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="تحسين الأداء وسرعة تحميل الصفحات."
+data-en="Performance and page loading optimization.">
+
+تحسين الأداء وسرعة تحميل الصفحات.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BUSINESS -->
+
+<div class="price-card">
+
+<h3
+data-ar="موقع شركة"
+data-en="Business Website">
+
+موقع شركة
+
+</h3>
+
+
+<div class="price">
+
+1500
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div
+class="price-note"
+data-ar="موقع احترافي متعدد الصفحات"
+data-en="Professional multi-page website">
+
+موقع احترافي متعدد الصفحات
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="عدة صفحات"
+data-en="Multiple Pages">
+
+عدة صفحات
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="صفحات الخدمات، من نحن، التواصل وغيرها."
+data-en="Services, About, Contact, and other pages.">
+
+صفحات الخدمات، من نحن، التواصل وغيرها.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تعريف بالخدمات"
+data-en="Services Showcase">
+
+تعريف بالخدمات
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="عرض خدمات الشركة بطريقة منظمة واحترافية."
+data-en="Professional and organized service presentation.">
+
+عرض خدمات الشركة بطريقة منظمة واحترافية.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="نموذج طلبات"
+data-en="Request Form">
+
+نموذج طلبات
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="استقبال طلبات العملاء مباشرة عبر الموقع."
+data-en="Receive customer requests directly through the website.">
+
+استقبال طلبات العملاء مباشرة عبر الموقع.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تصميم احترافي"
+data-en="Professional Design">
+
+تصميم احترافي
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="واجهة حديثة تعكس هوية الشركة."
+data-en="A modern interface reflecting the company's identity.">
+
+واجهة حديثة تعكس هوية الشركة.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STORE -->
+
+<div class="price-card">
+
+<h3
+data-ar="متجر إلكتروني"
+data-en="Online Store">
+
+متجر إلكتروني
+
+</h3>
+
+
+<div class="price">
+
+3500
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div
+class="price-note"
+data-ar="متجر مخصص حسب المتطلبات"
+data-en="Custom store based on requirements">
+
+متجر مخصص حسب المتطلبات
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="عرض المنتجات"
+data-en="Product Listings">
+
+عرض المنتجات
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة المنتجات مع الصور والأسعار والتفاصيل."
+data-en="Products with images, prices, and details.">
+
+إضافة المنتجات مع الصور والأسعار والتفاصيل.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="سلة شراء"
+data-en="Shopping Cart">
+
+سلة شراء
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة المنتجات وإتمام الطلب بسهولة."
+data-en="Add products and complete orders easily.">
+
+إضافة المنتجات وإتمام الطلب بسهولة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="بوابات دفع"
+data-en="Payment Gateways">
+
+بوابات دفع
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="ربط وسائل الدفع الإلكتروني حسب احتياجات المشروع."
+data-en="Integration with online payment methods based on project needs.">
+
+ربط وسائل الدفع الإلكتروني حسب احتياجات المشروع.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="لوحة تحكم"
+data-en="Dashboard">
+
+لوحة تحكم
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إدارة المنتجات والطلبات من لوحة خاصة."
+data-en="Manage products and orders through a dedicated dashboard.">
+
+إدارة المنتجات والطلبات من لوحة خاصة.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CUSTOM SYSTEM -->
+
+<div class="price-card">
+
+<h3
+data-ar="نظام خاص"
+data-en="Custom System">
+
+نظام خاص
+
+</h3>
+
+
+<div class="price">
+
+5000+
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div
+class="price-note"
+data-ar="السعر النهائي حسب المشروع"
+data-en="Final price depends on the project">
+
+السعر النهائي حسب المشروع
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="أنظمة حجز"
+data-en="Booking Systems">
+
+أنظمة حجز
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="أنظمة مواعيد وحجوزات حسب النشاط."
+data-en="Appointment and booking systems tailored to the business.">
+
+أنظمة مواعيد وحجوزات حسب النشاط.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="أنظمة إدارة"
+data-en="Management Systems">
+
+أنظمة إدارة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إدارة البيانات والطلبات والتقارير."
+data-en="Data, orders, and report management.">
+
+إدارة البيانات والطلبات والتقارير.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="خصائص مخصصة"
+data-en="Custom Features">
+
+خصائص مخصصة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة الوظائف الخاصة التي يحتاجها المشروع."
+data-en="Custom functionality based on project requirements.">
+
+إضافة الوظائف الخاصة التي يحتاجها المشروع.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تطوير كامل حسب الطلب"
+data-en="Fully Custom Development">
+
+تطوير كامل حسب الطلب
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="بناء النظام بالكامل حسب فكرة العميل واحتياجاته."
+data-en="Full system development based on the client's idea and requirements.">
+
+بناء النظام بالكامل حسب فكرة العميل واحتياجاته.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= GIFTS ================= -->
+
+<h3
+class="category-title"
+data-ar="مواقع الهدايا والمناسبات"
+data-en="Gift & Occasion Websites">
+
+مواقع الهدايا والمناسبات
+
+</h3>
+
+
+<p
+class="category-description"
+data-ar="مواقع تفاعلية مصممة لتكون جزءاً من الهدية نفسها، وليس مجرد صورة أو رسالة عادية. يمكن تخصيص التصميم والمحتوى والفكرة بالكامل."
+data-en="Interactive websites designed to become part of the gift itself, rather than just a picture or ordinary message. The design, content, and concept can be fully customized.">
+
+مواقع تفاعلية مصممة لتكون جزءاً من الهدية نفسها، وليس مجرد صورة أو رسالة عادية.
+
+</p>
+
+
+<div class="pricing">
+
+
+<!-- BIRTHDAY -->
+
+<div class="price-card">
+
+<span
+class="badge"
+data-ar="الأكثر طلباً"
+data-en="Popular">
+
+الأكثر طلباً
+
+</span>
+
+
+<h3
+data-ar="هدية عيد ميلاد"
+data-en="Birthday Gift Website">
+
+هدية عيد ميلاد
+
+</h3>
+
+
+<div class="price">
+
+350
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="صفحة شخصية"
+data-en="Personalized Page">
+
+صفحة شخصية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="صفحة مصممة خصيصاً للشخص مع اسمه ورسالة وصور وذكريات."
+data-en="A personalized page with the person's name, message, photos, and memories.">
+
+صفحة مصممة خصيصاً للشخص مع اسمه ورسالة وصور وذكريات.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="مفاجأة تفاعلية"
+data-en="Interactive Surprise">
+
+مفاجأة تفاعلية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="يمكن إضافة أسئلة أو خطوات أو مفاجآت تظهر تدريجياً."
+data-en="Questions, steps, and surprises can be revealed interactively.">
+
+يمكن إضافة أسئلة أو خطوات أو مفاجآت تظهر تدريجياً.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="كلمة مرور خاصة"
+data-en="Private Password">
+
+كلمة مرور خاصة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إمكانية حماية الهدية بكلمة مرور أو رقم خاص."
+data-en="The gift can be protected with a private password or code.">
+
+إمكانية حماية الهدية بكلمة مرور أو رقم خاص.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SURPRISE -->
+
+<div class="price-card">
+
+<h3
+data-ar="هدية ومفاجأة شخصية"
+data-en="Personal Surprise">
+
+هدية ومفاجأة شخصية
+
+</h3>
+
+
+<div class="price">
+
+450
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="فكرة مخصصة"
+data-en="Custom Concept">
+
+فكرة مخصصة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="تصميم الموقع حسب شخصية المهدى إليه والفكرة المطلوبة."
+data-en="The website is designed around the recipient and the desired concept.">
+
+تصميم الموقع حسب شخصية المهدى إليه والفكرة المطلوبة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="صور وذكريات"
+data-en="Photos & Memories">
+
+صور وذكريات
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة الصور والرسائل والذكريات والمحتوى الشخصي."
+data-en="Add photos, messages, memories, and personalized content.">
+
+إضافة الصور والرسائل والذكريات والمحتوى الشخصي.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تفاعل ومفاجآت"
+data-en="Interactive Surprises">
+
+تفاعل ومفاجآت
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="أزرار وأسئلة ومفاجآت ومراحل تفاعلية حسب الفكرة."
+data-en="Interactive buttons, questions, surprises, and stages.">
+
+أزرار وأسئلة ومفاجآت ومراحل تفاعلية حسب الفكرة.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DATE -->
+
+<div class="price-card">
+
+<h3
+data-ar="طلب موعد"
+data-en="Date Proposal Website">
+
+طلب موعد
+
+</h3>
+
+
+<div class="price">
+
+450
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="رسالة تفاعلية"
+data-en="Interactive Message">
+
+رسالة تفاعلية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="موقع مصمم حول فكرة طلب الموعد بطريقة مختلفة ومخصصة."
+data-en="A personalized interactive website designed around the date proposal.">
+
+موقع مصمم حول فكرة طلب الموعد بطريقة مختلفة ومخصصة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="اختيارات تفاعلية"
+data-en="Interactive Choices">
+
+اختيارات تفاعلية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="يمكن إضافة خيارات وأزرار وتفاعلات مختلفة داخل الموقع."
+data-en="Different options, buttons, and interactions can be added.">
+
+يمكن إضافة خيارات وأزرار وتفاعلات مختلفة داخل الموقع.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تصميم خاص"
+data-en="Custom Design">
+
+تصميم خاص
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="التصميم والألوان والمحتوى حسب فكرة العميل."
+data-en="Design, colors, and content based on the client's concept.">
+
+التصميم والألوان والمحتوى حسب فكرة العميل.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MARRIAGE -->
+
+<div class="price-card">
+
+<span
+class="badge"
+data-ar="مميز"
+data-en="Special">
+
+مميز
+
+</span>
+
+
+<h3
+data-ar="طلب زواج"
+data-en="Marriage Proposal Website">
+
+طلب زواج
+
+</h3>
+
+
+<div class="price">
+
+650
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="قصة ورسالة شخصية"
+data-en="Personal Story & Message">
+
+قصة ورسالة شخصية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="عرض القصة أو الرسالة بطريقة مرتبة داخل الموقع."
+data-en="Present the story or personal message through the website.">
+
+عرض القصة أو الرسالة بطريقة مرتبة داخل الموقع.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تجربة تفاعلية"
+data-en="Interactive Experience">
+
+تجربة تفاعلية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="صفحات أو مراحل تفاعلية تجعل الهدية تجربة كاملة."
+data-en="Interactive pages or stages that turn the gift into a complete experience.">
+
+صفحات أو مراحل تفاعلية تجعل الهدية تجربة كاملة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="محتوى مخصص"
+data-en="Personalized Content">
+
+محتوى مخصص
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="صور ورسائل وتفاصيل خاصة يتم تصميمها حسب الطلب."
+data-en="Personal photos, messages, and details designed specifically for the recipient.">
+
+صور ورسائل وتفاصيل خاصة يتم تصميمها حسب الطلب.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FUNNY GIFT -->
+
+<div class="price-card">
+
+<h3
+data-ar="هدية مضحكة"
+data-en="Funny Gift Website">
+
+هدية مضحكة
+
+</h3>
+
+
+<div class="price">
+
+350
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="فكرة كوميدية"
+data-en="Funny Concept">
+
+فكرة كوميدية
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="موقع مبني على فكرة مضحكة أو مقلب خفيف أو رسالة غير متوقعة."
+data-en="A website built around a funny concept, harmless prank, or unexpected message.">
+
+موقع مبني على فكرة مضحكة أو مقلب خفيف أو رسالة غير متوقعة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تفاعلات مخصصة"
+data-en="Custom Interactions">
+
+تفاعلات مخصصة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="أزرار وأسئلة ورسائل وتفاعلات مختلفة حسب الفكرة."
+data-en="Custom buttons, questions, messages, and interactions.">
+
+أزرار وأسئلة ورسائل وتفاعلات مختلفة حسب الفكرة.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SMART INVITATION -->
+
+<div class="price-card">
+
+<h3
+data-ar="دعوة مناسبة ذكية"
+data-en="Smart Event Invitation">
+
+دعوة مناسبة ذكية
+
+</h3>
+
+
+<div class="price">
+
+450
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="دعوة عبر رابط"
+data-en="Shareable Link">
+
+دعوة عبر رابط
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="دعوة إلكترونية تفتح من رابط ويتم إرسالها بسهولة عبر واتساب."
+data-en="A digital invitation accessible through a shareable link and easy to send through WhatsApp.">
+
+دعوة إلكترونية تفتح من رابط ويتم إرسالها بسهولة عبر واتساب.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="معلومات المناسبة"
+data-en="Event Details">
+
+معلومات المناسبة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="التاريخ والوقت والمكان والتفاصيل المهمة."
+data-en="Date, time, location, and important event details.">
+
+التاريخ والوقت والمكان والتفاصيل المهمة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="خريطة الموقع"
+data-en="Location Map">
+
+خريطة الموقع
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إضافة رابط مباشر للموقع عبر خرائط Google."
+data-en="Direct Google Maps location link.">
+
+إضافة رابط مباشر للموقع عبر خرائط Google.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WEDDING -->
+
+<div class="price-card">
+
+<span
+class="badge"
+data-ar="الأكثر تميزاً"
+data-en="Premium">
+
+الأكثر تميزاً
+
+</span>
+
+
+<h3
+data-ar="دعوة زفاف ذكية"
+data-en="Smart Wedding Invitation">
+
+دعوة زفاف ذكية
+
+</h3>
+
+
+<div class="price">
+
+750
+
+<span data-ar="ر.س" data-en="SAR">
+
+ر.س
+
+</span>
+
+</div>
+
+
+<div
+class="price-note"
+data-ar="دعوة تفاعلية وليست مجرد صورة"
+data-en="Interactive invitation, not just an image">
+
+دعوة تفاعلية وليست مجرد صورة
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="صفحة زفاف متكاملة"
+data-en="Complete Wedding Page">
+
+صفحة زفاف متكاملة
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="أسماء العروسين، التاريخ، الوقت، المكان وتفاصيل المناسبة."
+data-en="Couple names, date, time, venue, and event details.">
+
+أسماء العروسين، التاريخ، الوقت، المكان وتفاصيل المناسبة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="عداد تنازلي"
+data-en="Countdown">
+
+عداد تنازلي
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="عداد حي حتى موعد المناسبة."
+data-en="A live countdown until the wedding date.">
+
+عداد حي حتى موعد المناسبة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تأكيد الحضور RSVP"
+data-en="RSVP">
+
+تأكيد الحضور RSVP
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="إمكانية إضافة نموذج لتأكيد حضور الضيوف."
+data-en="Guests can confirm attendance through an RSVP form.">
+
+إمكانية إضافة نموذج لتأكيد حضور الضيوف.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="خرائط Google"
+data-en="Google Maps">
+
+خرائط Google
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="زر مباشر للوصول إلى موقع القاعة."
+data-en="Direct button to navigate to the venue.">
+
+زر مباشر للوصول إلى موقع القاعة.
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div
+class="feature-title"
+onclick="toggleFeature(this)"
+data-ar="تصميم مخصص"
+data-en="Custom Design">
+
+تصميم مخصص
+
+</div>
+
+
+<div
+class="feature-content"
+data-ar="الألوان والخطوط والصور والتفاصيل حسب هوية المناسبة."
+data-en="Custom colors, fonts, photos, and details matching the event identity.">
+
+الألوان والخطوط والصور والتفاصيل حسب هوية المناسبة.
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- التواصل -->
+
+<!-- ================= CONTACT ================= -->
+
 <section id="contact">
-  <div class="contact">
 
-    <h2 class="section-title" data-ar="اطلب موقعك الآن" data-en="Order Your Website Now">اطلب موقعك الآن</h2>
-    <p class="section-sub"
-       data-ar="قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت."
-       data-en="Send us your project details and we'll get back to you as soon as possible.">
-      قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
-    </p>
+<div class="contact">
 
-    <!-- الفورم -->
-    <div id="contact-form">
-      <input type="text" id="f-name" data-ar-placeholder="الاسم الكامل" data-en-placeholder="Full Name" placeholder="الاسم الكامل" required>
-      <input type="email" id="f-email" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email Address" placeholder="البريد الإلكتروني" required>
-      <input type="tel" id="f-phone" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone Number" placeholder="رقم الهاتف">
-      <select id="f-service" required>
-        <option value="" data-ar="اختر نوع الموقع" data-en="Select Website Type">اختر نوع الموقع</option>
-        <option value="موقع شخصي" data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
-        <option value="موقع شركة" data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
-        <option value="متجر إلكتروني" data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
-        <option value="نظام خاص" data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
-      </select>
-      <textarea id="f-message" data-ar-placeholder="اكتب تفاصيل مشروعك..." data-en-placeholder="Write your project details..." placeholder="اكتب تفاصيل مشروعك..." required></textarea>
-      <button id="submit-btn" onclick="submitForm()" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
-    </div>
+<h2
+class="section-title"
+data-ar="اطلب موقعك الآن"
+data-en="Order Your Website Now">
 
-    <!-- رسالة النجاح - مخفية في البداية -->
-    <div id="success-msg">
-      <div class="success-icon">✅</div>
-      <div class="success-title" data-ar="تم إرسال طلبك بنجاح!" data-en="Your request was sent successfully!">تم إرسال طلبك بنجاح!</div>
-      <div class="success-text" data-ar="شكراً لك، سيتم التواصل معك في أقرب وقت ممكن." data-en="Thank you! We'll get back to you as soon as possible.">شكراً لك، سيتم التواصل معك في أقرب وقت ممكن.</div>
-    </div>
+اطلب موقعك الآن
 
-    <div class="social-contact">
-      <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
-      <div class="social-box">
+</h2>
 
-        <a href="https://wa.me/249100942327" target="_blank" class="social-item">
-          <div class="social-icon whatsapp">💬</div>
-          <div>
-            <h4 data-ar="واتساب" data-en="WhatsApp">واتساب</h4>
-            <p>+249 10 094 2327</p>
-          </div>
-        </a>
 
-        <a href="mailto:esrasaifeldeen@gmail.com" class="social-item">
-          <div class="social-icon email">📧</div>
-          <div>
-            <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
-            <p>esrasaifeldeen@gmail.com</p>
-          </div>
-        </a>
+<p
+class="section-sub"
+data-ar="قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت."
+data-en="Send us your project details and we'll get back to you as soon as possible.">
 
-        <div class="social-item location">
-          <div class="social-icon location-icon">📍</div>
-          <div>
-            <h4 data-ar="الموقع" data-en="Location">الموقع</h4>
-            <p data-ar="المدينة المنورة" data-en="Madinah, Saudi Arabia">المدينة المنورة</p>
-          </div>
-        </div>
+قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
 
-      </div>
-    </div>
+</p>
 
-    <div class="work-time"
-         data-ar="ساعات العمل: من 5 مساءً حتى 4 صباحاً"
-         data-en="Working Hours: 5 PM to 4 AM">
-      ساعات العمل: من 5 مساءً حتى 4 صباحاً
-    </div>
 
-  </div>
+<!-- FORM -->
+
+<div id="contact-form">
+
+<input
+type="text"
+id="f-name"
+data-ar-placeholder="الاسم الكامل"
+data-en-placeholder="Full Name"
+placeholder="الاسم الكامل"
+required>
+
+
+<input
+type="email"
+id="f-email"
+data-ar-placeholder="البريد الإلكتروني"
+data-en-placeholder="Email Address"
+placeholder="البريد الإلكتروني"
+required>
+
+
+<input
+type="tel"
+id="f-phone"
+data-ar-placeholder="رقم الهاتف"
+data-en-placeholder="Phone Number"
+placeholder="رقم الهاتف">
+
+
+<select id="f-service" required>
+
+<option
+value=""
+data-ar="اختر نوع الموقع"
+data-en="Select Website Type">
+
+اختر نوع الموقع
+
+</option>
+
+
+<optgroup
+label="مواقع الأعمال"
+data-ar-label="مواقع الأعمال"
+data-en-label="Business Websites">
+
+
+<option
+value="موقع شخصي"
+data-ar="موقع شخصي"
+data-en="Personal Website">
+
+موقع شخصي
+
+</option>
+
+
+<option
+value="موقع شركة"
+data-ar="موقع شركة"
+data-en="Business Website">
+
+موقع شركة
+
+</option>
+
+
+<option
+value="متجر إلكتروني"
+data-ar="متجر إلكتروني"
+data-en="Online Store">
+
+متجر إلكتروني
+
+</option>
+
+
+<option
+value="نظام خاص"
+data-ar="نظام خاص"
+data-en="Custom System">
+
+نظام خاص
+
+</option>
+
+</optgroup>
+
+
+<optgroup
+label="الهدايا والمناسبات"
+data-ar-label="الهدايا والمناسبات"
+data-en-label="Gifts & Occasions">
+
+
+<option
+value="هدية عيد ميلاد"
+data-ar="هدية عيد ميلاد"
+data-en="Birthday Gift Website">
+
+هدية عيد ميلاد
+
+</option>
+
+
+<option
+value="هدية ومفاجأة شخصية"
+data-ar="هدية ومفاجأة شخصية"
+data-en="Personal Surprise">
+
+هدية ومفاجأة شخصية
+
+</option>
+
+
+<option
+value="طلب موعد"
+data-ar="طلب موعد"
+data-en="Date Proposal Website">
+
+طلب موعد
+
+</option>
+
+
+<option
+value="طلب زواج"
+data-ar="طلب زواج"
+data-en="Marriage Proposal Website">
+
+طلب زواج
+
+</option>
+
+
+<option
+value="هدية مضحكة"
+data-ar="هدية مضحكة"
+data-en="Funny Gift Website">
+
+هدية مضحكة
+
+</option>
+
+
+<option
+value="دعوة مناسبة ذكية"
+data-ar="دعوة مناسبة ذكية"
+data-en="Smart Event Invitation">
+
+دعوة مناسبة ذكية
+
+</option>
+
+
+<option
+value="دعوة زفاف ذكية"
+data-ar="دعوة زفاف ذكية"
+data-en="Smart Wedding Invitation">
+
+دعوة زفاف ذكية
+
+</option>
+
+</optgroup>
+
+</select>
+
+
+<textarea
+id="f-message"
+data-ar-placeholder="اكتب تفاصيل مشروعك..."
+data-en-placeholder="Write your project details..."
+placeholder="اكتب تفاصيل مشروعك..."
+required>
+</textarea>
+
+
+<button
+id="submit-btn"
+onclick="submitForm()"
+data-ar="إرسال الطلب"
+data-en="Send Request">
+
+إرسال الطلب
+
+</button>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div id="success-msg">
+
+<div class="success-icon">
+✅
+</div>
+
+
+<div
+class="success-title"
+data-ar="تم إرسال طلبك بنجاح!"
+data-en="Your request was sent successfully!">
+
+تم إرسال طلبك بنجاح!
+
+</div>
+
+
+<div
+class="success-text"
+data-ar="شكراً لك، سيتم التواصل معك في أقرب وقت ممكن."
+data-en="Thank you! We'll get back to you as soon as possible.">
+
+شكراً لك، سيتم التواصل معك في أقرب وقت ممكن.
+
+</div>
+
+</div>
+
+
+<!-- SOCIAL -->
+
+<div class="social-contact">
+
+<h3
+data-ar="تواصل معنا"
+data-en="Contact Us">
+
+تواصل معنا
+
+</h3>
+
+
+<div class="social-box">
+
+
+<a
+href="https://wa.me/249100942327"
+target="_blank"
+class="social-item">
+
+<div class="social-icon whatsapp">
+💬
+</div>
+
+
+<div>
+
+<h4
+data-ar="واتساب"
+data-en="WhatsApp">
+
+واتساب
+
+</h4>
+
+
+<p>
++249 10 094 2327
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="mailto:esrasaifeldeen@gmail.com"
+class="social-item">
+
+<div class="social-icon email">
+📧
+</div>
+
+
+<div>
+
+<h4
+data-ar="البريد الإلكتروني"
+data-en="Email">
+
+البريد الإلكتروني
+
+</h4>
+
+
+<p>
+esrasaifeldeen@gmail.com
+</p>
+
+</div>
+
+</a>
+
+
+<div class="social-item location">
+
+<div class="social-icon location-icon">
+📍
+</div>
+
+
+<div>
+
+<h4
+data-ar="الموقع"
+data-en="Location">
+
+الموقع
+
+</h4>
+
+
+<p
+data-ar="المدينة المنورة"
+data-en="Madinah, Saudi Arabia">
+
+المدينة المنورة
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+class="work-time"
+data-ar="ساعات العمل: من 5 مساءً حتى 4 صباحاً"
+data-en="Working Hours: 5 PM to 4 AM">
+
+ساعات العمل: من 5 مساءً حتى 4 صباحاً
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  <span data-ar="© 2026 Wali Links - جميع الحقوق محفوظة" data-en="© 2026 Wali Links - All Rights Reserved">© 2026 Wali Links - جميع الحقوق محفوظة</span>
-  <br><br>
-  <span data-ar="تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته."
-        data-en="Note: All clients are required to purchase their own domain to have full control over their website. Payment is made after viewing and testing the site.">
-    تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته.
-  </span>
+
+<span
+data-ar="© 2026 Wali Links - جميع الحقوق محفوظة"
+data-en="© 2026 Wali Links - All Rights Reserved">
+
+© 2026 Wali Links - جميع الحقوق محفوظة
+
+</span>
+
+
+<br>
+<br>
+
+
+<span
+data-ar="تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته."
+data-en="Note: Clients are required to purchase their own domain to have full control over their website. Payment is made after viewing and testing the site.">
+
+تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته.
+
+</span>
+
 </footer>
+
 
 <script>
 
+/* ================= LANGUAGE ================= */
+
 let currentLang = 'ar';
 
-function toggleLang() {
-  currentLang = currentLang === 'ar' ? 'en' : 'ar';
-  const isEn = currentLang === 'en';
 
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = isEn ? 'ltr' : 'rtl';
-  document.querySelector('#lang-btn').textContent = isEn ? 'AR' : 'EN';
-  document.title = isEn
-    ? 'Wali Links | Web Design & Development'
-    : 'Wali Links | تصميم وبيع المواقع الإلكترونية';
+function toggleLang(){
 
-  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-    el.textContent = isEn ? el.dataset.en : el.dataset.ar;
-  });
+currentLang =
+currentLang === 'ar'
+? 'en'
+: 'ar';
 
-  document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(el => {
-    el.placeholder = isEn ? el.dataset.enPlaceholder : el.dataset.arPlaceholder;
-  });
+const isEn =
+currentLang === 'en';
 
-  document.querySelectorAll('select option[data-ar][data-en]').forEach(opt => {
-    opt.textContent = isEn ? opt.dataset.en : opt.dataset.ar;
-  });
 
-  document.querySelectorAll('.feature').forEach(f => {
-    f.style.textAlign = isEn ? 'left' : 'right';
-  });
+document.documentElement.lang =
+currentLang;
+
+document.documentElement.dir =
+isEn ? 'ltr' : 'rtl';
+
+
+document.querySelector('#lang-btn')
+.textContent =
+isEn ? 'AR' : 'EN';
+
+
+document.title =
+isEn
+? 'Wali Links | Web Design & Development'
+: 'Wali Links | تصميم وبيع المواقع الإلكترونية';
+
+
+/* النصوص */
+
+document
+.querySelectorAll('[data-ar][data-en]')
+.forEach(el => {
+
+el.textContent =
+isEn
+? el.dataset.en
+: el.dataset.ar;
+
+});
+
+
+/* placeholders */
+
+document
+.querySelectorAll(
+'[data-ar-placeholder][data-en-placeholder]'
+)
+.forEach(el => {
+
+el.placeholder =
+isEn
+? el.dataset.enPlaceholder
+: el.dataset.arPlaceholder;
+
+});
+
+
+/* خيارات select */
+
+document
+.querySelectorAll(
+'select option[data-ar][data-en]'
+)
+.forEach(opt => {
+
+opt.textContent =
+isEn
+? opt.dataset.en
+: opt.dataset.ar;
+
+});
+
+
+/* عناوين المجموعات */
+
+document
+.querySelectorAll(
+'optgroup[data-ar-label][data-en-label]'
+)
+.forEach(group => {
+
+group.label =
+isEn
+? group.dataset.enLabel
+: group.dataset.arLabel;
+
+});
+
+
+/* محاذاة المميزات */
+
+document
+.querySelectorAll('.feature')
+.forEach(feature => {
+
+feature.style.textAlign =
+isEn
+? 'left'
+: 'right';
+
+});
+
 }
 
-function toggleFeature(element) {
-  const content = element.nextElementSibling;
-  content.style.display = content.style.display === 'block' ? 'none' : 'block';
+
+/* ================= FEATURES ================= */
+
+function toggleFeature(element){
+
+const content =
+element.nextElementSibling;
+
+
+content.style.display =
+content.style.display === 'block'
+? 'none'
+: 'block';
+
 }
 
-async function submitForm() {
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
-  const service = document.getElementById('f-service').value;
-  const message = document.getElementById('f-message').value.trim();
 
-  // تحقق بسيط
-  if (!name || !email || !service || !message) {
-    alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
-    return;
-  }
+/* ================= FORM ================= */
 
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.textContent = currentLang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+async function submitForm(){
 
-  try {
-    const res = await fetch('https://formspree.io/f/xdablqqn', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, service, message, _subject: 'طلب جديد من موقع Wali Links' })
-    });
+const name =
+document.getElementById('f-name')
+.value
+.trim();
 
-    if (res.ok) {
-      // إخفاء الفورم وإظهار رسالة النجاح
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
-    } else {
-      throw new Error('فشل الإرسال');
-    }
-  } catch (err) {
-    btn.disabled = false;
-    btn.textContent = currentLang === 'ar' ? 'إرسال الطلب' : 'Send Request';
-    alert(currentLang === 'ar' ? 'حدث خطأ، حاول مرة أخرى.' : 'Something went wrong, please try again.');
-  }
+
+const email =
+document.getElementById('f-email')
+.value
+.trim();
+
+
+const phone =
+document.getElementById('f-phone')
+.value
+.trim();
+
+
+const service =
+document.getElementById('f-service')
+.value;
+
+
+const message =
+document.getElementById('f-message')
+.value
+.trim();
+
+
+/* التحقق */
+
+if(
+!name ||
+!email ||
+!service ||
+!message
+){
+
+alert(
+
+currentLang === 'ar'
+?
+'يرجى ملء جميع الحقول المطلوبة.'
+:
+'Please fill in all required fields.'
+
+);
+
+return;
+
+}
+
+
+/* زر الإرسال */
+
+const btn =
+document.getElementById('submit-btn');
+
+
+btn.disabled =
+true;
+
+
+btn.textContent =
+currentLang === 'ar'
+?
+'جاري الإرسال...'
+:
+'Sending...';
+
+
+try{
+
+
+const res =
+await fetch(
+'https://formspree.io/f/xdablqqn',
+{
+
+method:'POST',
+
+headers:{
+'Accept':'application/json',
+'Content-Type':'application/json'
+},
+
+body:JSON.stringify({
+
+name,
+email,
+phone,
+service,
+message,
+
+_subject:
+'طلب جديد من موقع Wali Links'
+
+})
+
+});
+
+
+if(res.ok){
+
+
+document
+.getElementById('contact-form')
+.style.display =
+'none';
+
+
+document
+.getElementById('success-msg')
+.style.display =
+'block';
+
+
+}else{
+
+throw new Error(
+'فشل الإرسال'
+);
+
+}
+
+
+}catch(err){
+
+
+btn.disabled =
+false;
+
+
+btn.textContent =
+currentLang === 'ar'
+?
+'إرسال الطلب'
+:
+'Send Request';
+
+
+alert(
+
+currentLang === 'ar'
+?
+'حدث خطأ، حاول مرة أخرى.'
+:
+'Something went wrong, please try again.'
+
+);
+
+}
+
 }
 
 </script>
 
 </body>
-  </html>
+</html>
