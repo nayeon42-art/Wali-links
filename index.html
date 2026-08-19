@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wali Links | تصميم وبيع المواقع الإلكترونية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#07131f;
+color:white;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+/* ================= HERO ================= */
+
+header{
+min-height:100vh;
+
+background:
+linear-gradient(rgba(4,10,18,.88),rgba(4,10,18,.94)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')
+center/cover;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:40px;
+text-align:center;
+}
+
+.hero{
+max-width:1000px;
+}
+
+
+/* ================= LOGO ================= */
+
+.logo-wrap{
+margin:0 auto 30px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo{
+width:230px;
+height:auto;
+
+object-fit:contain;
+background:none;
+border:none;
+border-radius:0;
+
+filter:
+drop-shadow(0 0 18px rgba(0,213,255,.55))
+drop-shadow(0 0 38px rgba(110,70,255,.35));
+
+animation:logoFloat 3.2s ease-in-out infinite;
+
+transition:.4s ease;
+}
+
+.logo:hover{
+transform:scale(1.05);
+filter:
+drop-shadow(0 0 26px rgba(0,213,255,.8))
+drop-shadow(0 0 55px rgba(110,70,255,.5));
+}
+
+
+@keyframes logoFloat{
+0%,100%{
+transform:translateY(0px);
+filter:
+drop-shadow(0 0 18px rgba(0,213,255,.55))
+drop-shadow(0 0 38px rgba(110,70,255,.35));
+}
+50%{
+transform:translateY(-14px);
+filter:
+drop-shadow(0 0 28px rgba(0,213,255,.85))
+drop-shadow(0 0 55px rgba(110,70,255,.5));
+}
+}
+
+
+/* ================= HERO TEXT ================= */
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+margin-bottom:15px;
+
+background:linear-gradient(to left,#00d5ff,#ffffff);
+background-clip:text;
+-webkit-background-clip:text;
+
+color:transparent;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:21px;
+line-height:2;
+color:#d8e4f0;
+margin-bottom:30px;
+}
+
+.hero-btns{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 32px;
+border-radius:50px;
+font-size:17px;
+font-weight:700;
+transition:.3s;
+display:inline-block;
+}
+
+.btn-primary{
+background:#00d5ff;
+color:#07131f;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px rgba(0,213,255,.5);
+}
+
+.btn-secondary{
+border:2px solid #00d5ff;
+color:white;
+}
+
+.btn-secondary:hover{
+background:#00d5ff;
+color:#07131f;
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.section-sub{
+text-align:center;
+max-width:850px;
+margin:auto;
+line-height:2;
+color:#b7c5d4;
+margin-bottom:60px;
+font-size:18px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#0d1d2d;
+padding:30px;
+border-radius:24px;
+transition:.3s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#00d5ff;
+box-shadow:0 0 25px rgba(0,213,255,.15);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:24px;
+color:#00d5ff;
+}
+
+.card p{
+line-height:2;
+color:#d1dbe5;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-title{
+margin-top:70px;
+margin-bottom:30px;
+font-size:30px;
+color:#00d5ff;
+text-align:center;
+}
+
+.category-description{
+text-align:center;
+max-width:800px;
+margin:0 auto 35px;
+line-height:2;
+color:#b7c5d4;
+}
+
+
+/* ================= PRICING ================= */
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.price-card{
+background:#0d1d2d;
+padding:35px;
+border-radius:24px;
+text-align:center;
+transition:.3s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.price-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,213,255,.18);
+border-color:#00d5ff;
+}
+
+.price-card h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.price{
+font-size:42px;
+font-weight:800;
+color:#00d5ff;
+margin-bottom:25px;
+}
+
+.price-note{
+font-size:14px;
+color:#8fa1b3;
+margin-top:-15px;
+margin-bottom:25px;
+}
+
+.feature{
+margin-bottom:15px;
+text-align:right;
+}
+
+.feature-title{
+background:#122233;
+padding:14px;
+border-radius:12px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
+}
+
+.feature-title:hover{
+background:#00d5ff;
+color:#07131f;
+}
+
+.feature-content{
+display:none;
+padding:15px;
+line-height:2;
+color:#d5e2ee;
+background:#091521;
+border-radius:12px;
+margin-top:8px;
+font-size:15px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+background:#08111c;
+border-radius:30px;
+padding:50px;
+max-width:900px;
+margin:auto;
+}
+
+#contact-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,
+textarea,
+select{
+padding:16px;
+border:none;
+outline:none;
+border-radius:14px;
+background:#122233;
+color:white;
+font-size:16px;
+}
+
+select option{
+background:#122233;
+color:white;
+}
+
+textarea{
+resize:none;
+height:150px;
+}
+
+#submit-btn{
+padding:16px;
+border:none;
+border-radius:50px;
+background:#00d5ff;
+font-size:18px;
+font-weight:800;
+cursor:pointer;
+transition:.3s;
+color:#07131f;
+}
+
+#submit-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(0,213,255,.4);
+}
+
+#submit-btn:disabled{
+opacity:.6;
+cursor:not-allowed;
+transform:none;
+}
+
+
+/* ================= SUCCESS ================= */
+
+#success-msg{
+display:none;
+text-align:center;
+padding:40px 20px;
+animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+from{ opacity:0; transform:translateY(20px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+.success-icon{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.success-title{
+font-size:28px;
+font-weight:800;
+color:#00d5ff;
+margin-bottom:12px;
+}
+
+.success-text{
+font-size:17px;
+color:#b7c5d4;
+line-height:2;
+}
+
+
+/* ================= SOCIAL ================= */
+
+.social-contact{
+margin-top:40px;
+padding-top:35px;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.social-contact h3{
+text-align:center;
+font-size:28px;
+margin-bottom:25px;
+color:#00d5ff;
+}
+
+.social-box{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.social-item{
+display:flex;
+align-items:center;
+gap:18px;
+background:#122233;
+padding:18px;
+border-radius:18px;
+transition:.3s;
+color:white;
+flex-wrap:wrap;
+}
+
+.social-item:hover{
+transform:translateY(-4px);
+border:1px solid #00d5ff;
+box-shadow:0 0 20px rgba(0,213,255,.15);
+}
+
+.social-icon{
+width:60px;
+height:60px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+flex-shrink:0;
+}
+
+.whatsapp{ background:#25D366; }
+.email{ background:#ff6b6b; }
+.location-icon{ background:#00d5ff; color:#07131f; }
+
+.social-item h4{
+margin-bottom:4px;
+font-size:20px;
+}
+
+.social-item p{
+color:#d3dce5;
+font-size:16px;
+word-break:break-word;
+overflow-wrap:break-word;
+max-width:100%;
+}
+
+.location{ cursor:default; }
+
+.work-time{
+margin-top:25px;
+text-align:center;
+font-size:18px;
+line-height:2;
+color:#c6d4df;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+padding:35px;
+text-align:center;
+background:#050b13;
+color:#8fa1b3;
+margin-top:60px;
+line-height:2;
+}
+
+
+/* ================= LANGUAGE BUTTON ================= */
+
+#lang-btn{
+position:fixed;
+top:18px;
+left:18px;
+z-index:999;
+
+background:#00d5ff;
+color:#07131f;
+
+border:none;
+border-radius:50px;
+
+padding:10px 22px;
+
+font-size:15px;
+font-weight:700;
+
+cursor:pointer;
+font-family:'Cairo',sans-serif;
+
+box-shadow:0 0 18px rgba(0,213,255,.35);
+transition:.3s;
+}
+
+#lang-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 28px rgba(0,213,255,.55);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero h1{ font-size:45px; }
+.hero p{ font-size:18px; }
+.section-title{ font-size:34px; }
+
+.logo{
+width:160px;
+height:auto;
+}
+
+.contact{ padding:30px 20px; }
+.price-card{ padding:28px 20px; }
+
+}
+
+
+/* ================= SPECIAL BADGE ================= */
+
+.badge{
+display:inline-block;
+background:#00d5ff;
+color:#07131f;
+padding:5px 13px;
+border-radius:50px;
+font-size:12px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+
+/* ================= REVIEWS ================= */
+
+#reviews{
+background:#06101a;
+}
+
+.reviews-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-bottom:50px;
+}
+
+.review-card{
+background:#0d1d2d;
+border-radius:24px;
+padding:28px;
+border:1px solid rgba(255,255,255,.06);
+position:relative;
+transition:.3s;
+}
+
+.review-card:hover{
+border-color:rgba(0,213,255,.3);
+box-shadow:0 0 20px rgba(0,213,255,.08);
+}
+
+.review-header{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:16px;
+}
+
+.review-avatar{
+width:52px;
+height:52px;
+border-radius:50%;
+background:linear-gradient(135deg,#00d5ff,#7441ff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+flex-shrink:0;
+}
+
+.review-meta h4{
+font-size:17px;
+font-weight:700;
+color:#e8f4fc;
+margin-bottom:3px;
+}
+
+.review-meta span{
+font-size:13px;
+color:#6a8599;
+}
+
+.review-email{
+font-size:12px;
+color:#4a90a8;
+margin-top:2px;
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.review-email::before{
+content:"✓";
+color:#00d5ff;
+font-weight:700;
+}
+
+.review-service-tag{
+display:inline-block;
+background:rgba(0,213,255,.12);
+color:#00d5ff;
+border:1px solid rgba(0,213,255,.25);
+padding:3px 12px;
+border-radius:50px;
+font-size:12px;
+font-weight:700;
+margin-bottom:14px;
+}
+
+.review-stars{
+color:#f4c542;
+font-size:18px;
+margin-bottom:12px;
+letter-spacing:2px;
+}
+
+.review-text{
+line-height:1.9;
+color:#c5d5e4;
+font-size:15px;
+}
+
+.review-quote{
+position:absolute;
+top:20px;
+left:20px;
+font-size:48px;
+color:rgba(0,213,255,.08);
+font-family:Georgia,serif;
+line-height:1;
+pointer-events:none;
+}
+
+/* زر حذف - مخفي افتراضياً، يظهر بعد كود الأدمن */
+.delete-btn{
+display:none;
+position:absolute;
+top:14px;
+left:14px;
+background:rgba(255,80,80,.15);
+border:1px solid rgba(255,80,80,.35);
+color:#ff6b6b;
+border-radius:50%;
+width:32px;
+height:32px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+align-items:center;
+justify-content:center;
+z-index:5;
+}
+
+.delete-btn:hover{
+background:rgba(255,80,80,.3);
+border-color:#ff6b6b;
+}
+
+body.admin-mode .delete-btn{
+display:flex;
+}
+
+body.admin-mode .review-quote{
+display:none;
+}
+
+/* ================= ADD REVIEW ================= */
+
+.add-review-box{
+background:#0d1d2d;
+border-radius:24px;
+padding:28px 30px;
+border:1px solid rgba(0,213,255,.15);
+}
+
+.add-review-box h3{
+font-size:24px;
+font-weight:800;
+color:#00d5ff;
+margin-bottom:8px;
+text-align:center;
+}
+
+.add-review-box .sub-note{
+text-align:center;
+color:#7a95ab;
+font-size:14px;
+margin-bottom:24px;
+}
+
+.review-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+padding:14px 16px;
+border:1px solid rgba(255,255,255,.06);
+outline:none;
+border-radius:14px;
+background:#122233;
+color:white;
+font-size:15px;
+font-family:'Cairo',sans-serif;
+transition:.3s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus{
+border-color:rgba(0,213,255,.4);
+box-shadow:0 0 12px rgba(0,213,255,.08);
+}
+
+.review-form textarea{
+resize:none;
+height:110px;
+}
+
+.star-selector{
+display:flex;
+gap:8px;
+align-items:center;
+padding:12px 16px;
+background:#122233;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.06);
+flex-wrap:wrap;
+}
+
+.star-selector label{
+font-size:14px;
+color:#8fa1b3;
+margin-left:8px;
+}
+
+.star-selector .stars-row{
+display:flex;
+gap:4px;
+direction:ltr;
+}
+
+.star-selector input[type="radio"]{
+display:none;
+}
+
+.star-selector .star-lbl{
+font-size:26px;
+cursor:pointer;
+color:#2d4a60;
+transition:.2s;
+}
+
+.star-selector input[type="radio"]:checked ~ .star-lbl,
+.star-selector .star-lbl:hover,
+.star-selector .star-lbl:hover ~ .star-lbl{
+color:#f4c542;
+}
+
+/* reverse trick for RTL stars */
+.stars-row{
+flex-direction:row-reverse;
+}
+
+.stars-row .star-lbl:hover,
+.stars-row .star-lbl:hover ~ .star-lbl{
+color:#f4c542;
+}
+
+.stars-row input[type="radio"]:checked ~ .star-lbl{
+color:#f4c542;
+}
+
+#add-review-btn{
+padding:14px;
+border:none;
+border-radius:50px;
+background:#00d5ff;
+font-size:16px;
+font-weight:800;
+cursor:pointer;
+transition:.3s;
+color:#07131f;
+font-family:'Cairo',sans-serif;
+}
+
+#add-review-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(0,213,255,.4);
+}
+
+/* ================= ADMIN PANEL ================= */
+
+.admin-toggle-area{
+text-align:center;
+margin-top:30px;
+}
+
+.admin-toggle-area button{
+background:transparent;
+border:1px solid rgba(255,255,255,.1);
+color:#4a6478;
+padding:8px 20px;
+border-radius:50px;
+font-size:13px;
+cursor:pointer;
+font-family:'Cairo',sans-serif;
+transition:.3s;
+}
+
+.admin-toggle-area button:hover{
+border-color:rgba(0,213,255,.3);
+color:#00d5ff;
+}
+
+#admin-panel{
+display:none;
+background:#08111c;
+border:1px solid rgba(255,80,80,.2);
+border-radius:18px;
+padding:20px 25px;
+max-width:400px;
+margin:20px auto 0;
+text-align:center;
+}
+
+#admin-panel p{
+color:#7a95ab;
+font-size:14px;
+margin-bottom:14px;
+}
+
+#admin-code-input{
+width:100%;
+padding:12px 16px;
+border-radius:12px;
+background:#122233;
+border:1px solid rgba(255,255,255,.08);
+color:white;
+font-size:16px;
+text-align:center;
+letter-spacing:4px;
+outline:none;
+font-family:'Cairo',sans-serif;
+}
+
+#admin-enter-btn{
+margin-top:12px;
+padding:10px 28px;
+border:none;
+border-radius:50px;
+background:#ff6b6b;
+color:white;
+font-size:14px;
+font-weight:700;
+cursor:pointer;
+font-family:'Cairo',sans-serif;
+transition:.3s;
+}
+
+#admin-enter-btn:hover{
+box-shadow:0 0 15px rgba(255,80,80,.35);
+}
+
+#admin-status{
+margin-top:10px;
+font-size:13px;
+color:#ff6b6b;
+min-height:20px;
+}
+
+.admin-active-bar{
+display:none;
+background:rgba(255,80,80,.08);
+border:1px solid rgba(255,80,80,.2);
+border-radius:12px;
+padding:10px 20px;
+text-align:center;
+margin-top:15px;
+font-size:14px;
+color:#ff9a9a;
+}
+
+body.admin-mode .admin-active-bar{
+display:block;
+}
+
+
+
+/* ================= PORTFOLIO ================= */
+
+#portfolio{
+background:#07131f;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+gap:25px;
+margin-bottom:40px;
+}
+
+.portfolio-card{
+display:block;
+background:#0d1d2d;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.06);
+transition:.35s;
+color:white;
+position:relative;
+}
+
+.portfolio-card:hover{
+transform:translateY(-8px);
+border-color:rgba(0,213,255,.4);
+box-shadow:0 0 30px rgba(0,213,255,.15);
+}
+
+.portfolio-preview{
+height:160px;
+background:linear-gradient(135deg,#0b1d30,#101828,#0d1525);
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+overflow:hidden;
+}
+
+.portfolio-icon{
+font-size:72px;
+position:relative;
+z-index:2;
+filter:drop-shadow(0 0 18px rgba(0,213,255,.3));
+transition:.35s;
+}
+
+.portfolio-card:hover .portfolio-icon{
+transform:scale(1.12);
+filter:drop-shadow(0 0 28px rgba(0,213,255,.55));
+}
+
+.portfolio-shine{
+position:absolute;
+inset:0;
+background:
+radial-gradient(
+ellipse at 50% 40%,
+rgba(0,213,255,.07),
+transparent 65%
+);
+}
+
+.portfolio-info{
+padding:22px 24px 26px;
+}
+
+.portfolio-tag{
+display:inline-block;
+background:rgba(0,213,255,.1);
+color:#00d5ff;
+border:1px solid rgba(0,213,255,.22);
+padding:3px 12px;
+border-radius:50px;
+font-size:12px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.portfolio-info h3{
+font-size:18px;
+font-weight:700;
+margin-bottom:8px;
+color:#e8f4fc;
+line-height:1.5;
+}
+
+.portfolio-info p{
+font-size:14px;
+color:#8fa5ba;
+line-height:1.8;
+margin-bottom:14px;
+}
+
+.portfolio-link-label{
+font-size:14px;
+font-weight:700;
+color:#00d5ff;
+transition:.3s;
+}
+
+.portfolio-card:hover .portfolio-link-label{
+letter-spacing:1px;
+}
+
+/* delete btn on portfolio cards */
+.portfolio-delete-btn{
+display:none;
+position:absolute;
+top:12px;
+left:12px;
+background:rgba(255,80,80,.18);
+border:1px solid rgba(255,80,80,.4);
+color:#ff6b6b;
+border-radius:50%;
+width:34px;
+height:34px;
+font-size:16px;
+cursor:pointer;
+z-index:10;
+align-items:center;
+justify-content:center;
+transition:.3s;
+}
+
+.portfolio-delete-btn:hover{
+background:rgba(255,80,80,.35);
+}
+
+body.admin-mode .portfolio-delete-btn{
+display:flex;
+}
+
+/* add work box */
+.add-work-area{
+max-width:650px;
+margin:0 auto;
+}
+
+.add-work-box{
+background:#0d1d2d;
+border-radius:24px;
+padding:32px;
+border:1px dashed rgba(0,213,255,.25);
+}
+
+.add-work-box h3{
+font-size:22px;
+font-weight:800;
+color:#00d5ff;
+margin-bottom:20px;
+text-align:center;
+}
+
+.work-form{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.work-form input,
+.work-form select{
+padding:14px 16px;
+border:1px solid rgba(255,255,255,.06);
+outline:none;
+border-radius:14px;
+background:#122233;
+color:white;
+font-size:15px;
+font-family:'Cairo',sans-serif;
+transition:.3s;
+}
+
+.work-form input:focus,
+.work-form select:focus{
+border-color:rgba(0,213,255,.4);
+}
+
+.work-form select option{
+background:#122233;
+}
+
+#add-work-btn{
+padding:13px;
+border:none;
+border-radius:50px;
+background:#00d5ff;
+font-size:16px;
+font-weight:800;
+cursor:pointer;
+transition:.3s;
+color:#07131f;
+font-family:'Cairo',sans-serif;
+}
+
+#add-work-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(0,213,255,.4);
+}
+
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<button id="lang-btn" onclick="toggleLang()">EN</button>
+
+
+<!-- ================= HERO ================= -->
+
+<header>
+<div class="hero">
+
+<div class="logo-wrap">
+<img src="logo.png" alt="Wali Links Logo" class="logo">
+</div>
+
+<h1>Wali Links</h1>
+
+<p
+data-ar="نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بالإضافة إلى مواقع الهدايا والمفاجآت والمناسبات التفاعلية."
+data-en="We provide modern web design and development services for businesses, stores, and individuals, along with interactive gift, surprise, and event websites.">
+نقدّم خدمات تصميم وتطوير مواقع إلكترونية حديثة للشركات والمتاجر والأفراد، بالإضافة إلى مواقع الهدايا والمفاجآت والمناسبات التفاعلية.
+</p>
+
+<div class="hero-btns">
+<a href="#portfolio" class="btn btn-secondary" data-ar="أعمالنا" data-en="Our Work" style="border-color:#7441ff;color:#c9b0ff;">أعمالنا</a>
+<a href="#pricing" class="btn btn-primary" data-ar="الأسعار" data-en="Pricing">الأسعار</a>
+<a href="#contact" class="btn btn-secondary" data-ar="اطلب موقعك" data-en="Order Your Site">اطلب موقعك</a>
+</div>
+
+</div>
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<h2 class="section-title" data-ar="من نحن" data-en="About Us">من نحن</h2>
+
+<p class="section-sub"
+data-ar="فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم."
+data-en="Wali Links provides modern web design and development services, focusing on speed, security, professional design, and user experience.">
+فريق Wali Links يقدم خدمات تصميم وتطوير المواقع الإلكترونية الحديثة، مع التركيز على السرعة والأمان والتصميم الاحترافي وتجربة المستخدم.
+</p>
+
+<div class="about-grid">
+
+<div class="card">
+<h3 data-ar="تصميم عصري" data-en="Modern Design">تصميم عصري</h3>
+<p data-ar="واجهات حديثة ومتجاوبة تعمل على الجوال والتابلت والكمبيوتر." data-en="Modern responsive interfaces that work across mobile, tablet, and desktop.">واجهات حديثة ومتجاوبة تعمل على الجوال والتابلت والكمبيوتر.</p>
+</div>
+
+<div class="card">
+<h3 data-ar="سرعة وأمان" data-en="Speed & Security">سرعة وأمان</h3>
+<p data-ar="تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية." data-en="Optimized performance, security, and efficient website operation.">تحسين سرعة الموقع وتأمينه وتجهيزه ليعمل بكفاءة عالية.</p>
+</div>
+
+<div class="card">
+<h3 data-ar="مدة التنفيذ" data-en="Delivery Time">مدة التنفيذ</h3>
+<p data-ar="يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم." data-en="Most projects are completed within 10 to 15 days.">يتم تنفيذ أغلب المشاريع خلال مدة تتراوح بين 10 إلى 15 يوم.</p>
+</div>
+
+<div class="card">
+<h3 data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</h3>
+<p data-ar="من الساعة 5 مساءً حتى 4 صباحاً. لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB." data-en="From 5 PM to 4 AM — because a true programmer apparently lives in a cave lit by an RGB monitor.">من الساعة 5 مساءً حتى 4 صباحاً.<br>لأن المبرمج الطبيعي يعيش غالباً داخل كهف مضيء بشاشة RGB.</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section id="pricing">
+
+<h2 class="section-title" data-ar="أنواع المواقع والأسعار" data-en="Website Types & Pricing">أنواع المواقع والأسعار</h2>
+
+<p class="section-sub"
+data-ar="نقدم أنواعاً مختلفة من المواقع، من المواقع الشخصية والتجارية إلى المواقع التفاعلية المصممة للهدايا والمناسبات الخاصة."
+data-en="We offer different website types, from personal and business websites to interactive websites designed for gifts and special occasions.">
+نقدم أنواعاً مختلفة من المواقع، من المواقع الشخصية والتجارية إلى المواقع التفاعلية المصممة للهدايا والمناسبات الخاصة.
+</p>
+
+
+<h3 class="category-title" data-ar="مواقع الأعمال والمشاريع" data-en="Business & Project Websites">مواقع الأعمال والمشاريع</h3>
+
+<div class="pricing">
+
+<div class="price-card">
+<h3 data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</h3>
+<div class="price">600 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="price-note" data-ar="باقة أساسية" data-en="Basic package">باقة أساسية</div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="صفحة تعريفية احترافية" data-en="Professional Profile Page">صفحة تعريفية احترافية</div><div class="feature-content" data-ar="صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب." data-en="A professional page showcasing your information or services with a modern responsive design.">صفحة تعرض معلوماتك أو خدماتك بشكل احترافي مع تصميم حديث ومتجاوب.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم متجاوب" data-en="Responsive Design">تصميم متجاوب</div><div class="feature-content" data-ar="الموقع يعمل على الجوال والتابلت والكمبيوتر." data-en="The website works across mobile, tablet, and desktop.">الموقع يعمل على الجوال والتابلت والكمبيوتر.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="روابط تواصل" data-en="Social Links">روابط تواصل</div><div class="feature-content" data-ar="إضافة واتساب وإنستقرام والبريد الإلكتروني وغيرها." data-en="WhatsApp, Instagram, email, and other contact links.">إضافة واتساب وإنستقرام والبريد الإلكتروني وغيرها.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="سرعة عالية" data-en="High Speed">سرعة عالية</div><div class="feature-content" data-ar="تحسين الأداء وسرعة تحميل الصفحات." data-en="Performance and page loading optimization.">تحسين الأداء وسرعة تحميل الصفحات.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="موقع شركة" data-en="Business Website">موقع شركة</h3>
+<div class="price">1500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="price-note" data-ar="موقع احترافي متعدد الصفحات" data-en="Professional multi-page website">موقع احترافي متعدد الصفحات</div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="عدة صفحات" data-en="Multiple Pages">عدة صفحات</div><div class="feature-content" data-ar="صفحات الخدمات، من نحن، التواصل وغيرها." data-en="Services, About, Contact, and other pages.">صفحات الخدمات، من نحن، التواصل وغيرها.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تعريف بالخدمات" data-en="Services Showcase">تعريف بالخدمات</div><div class="feature-content" data-ar="عرض خدمات الشركة بطريقة منظمة واحترافية." data-en="Professional and organized service presentation.">عرض خدمات الشركة بطريقة منظمة واحترافية.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="نموذج طلبات" data-en="Request Form">نموذج طلبات</div><div class="feature-content" data-ar="استقبال طلبات العملاء مباشرة عبر الموقع." data-en="Receive customer requests directly through the website.">استقبال طلبات العملاء مباشرة عبر الموقع.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم احترافي" data-en="Professional Design">تصميم احترافي</div><div class="feature-content" data-ar="واجهة حديثة تعكس هوية الشركة." data-en="A modern interface reflecting the company's identity.">واجهة حديثة تعكس هوية الشركة.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</h3>
+<div class="price">3500 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="price-note" data-ar="متجر مخصص حسب المتطلبات" data-en="Custom store based on requirements">متجر مخصص حسب المتطلبات</div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="عرض المنتجات" data-en="Product Listings">عرض المنتجات</div><div class="feature-content" data-ar="إضافة المنتجات مع الصور والأسعار والتفاصيل." data-en="Products with images, prices, and details.">إضافة المنتجات مع الصور والأسعار والتفاصيل.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="سلة شراء" data-en="Shopping Cart">سلة شراء</div><div class="feature-content" data-ar="إضافة المنتجات وإتمام الطلب بسهولة." data-en="Add products and complete orders easily.">إضافة المنتجات وإتمام الطلب بسهولة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="بوابات دفع" data-en="Payment Gateways">بوابات دفع</div><div class="feature-content" data-ar="ربط وسائل الدفع الإلكتروني حسب احتياجات المشروع." data-en="Integration with online payment methods based on project needs.">ربط وسائل الدفع الإلكتروني حسب احتياجات المشروع.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="لوحة تحكم" data-en="Dashboard">لوحة تحكم</div><div class="feature-content" data-ar="إدارة المنتجات والطلبات من لوحة خاصة." data-en="Manage products and orders through a dedicated dashboard.">إدارة المنتجات والطلبات من لوحة خاصة.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="نظام خاص" data-en="Custom System">نظام خاص</h3>
+<div class="price">5000+ <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="price-note" data-ar="السعر النهائي حسب المشروع" data-en="Final price depends on the project">السعر النهائي حسب المشروع</div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة حجز" data-en="Booking Systems">أنظمة حجز</div><div class="feature-content" data-ar="أنظمة مواعيد وحجوزات حسب النشاط." data-en="Appointment and booking systems tailored to the business.">أنظمة مواعيد وحجوزات حسب النشاط.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="أنظمة إدارة" data-en="Management Systems">أنظمة إدارة</div><div class="feature-content" data-ar="إدارة البيانات والطلبات والتقارير." data-en="Data, orders, and report management.">إدارة البيانات والطلبات والتقارير.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="خصائص مخصصة" data-en="Custom Features">خصائص مخصصة</div><div class="feature-content" data-ar="إضافة الوظائف الخاصة التي يحتاجها المشروع." data-en="Custom functionality based on project requirements.">إضافة الوظائف الخاصة التي يحتاجها المشروع.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تطوير كامل حسب الطلب" data-en="Fully Custom Development">تطوير كامل حسب الطلب</div><div class="feature-content" data-ar="بناء النظام بالكامل حسب فكرة العميل واحتياجاته." data-en="Full system development based on the client's idea and requirements.">بناء النظام بالكامل حسب فكرة العميل واحتياجاته.</div></div>
+</div>
+
+</div>
+
+
+<h3 class="category-title" data-ar="مواقع الهدايا والمناسبات" data-en="Gift & Occasion Websites">مواقع الهدايا والمناسبات</h3>
+
+<p class="category-description"
+data-ar="مواقع تفاعلية مصممة لتكون جزءاً من الهدية نفسها، وليس مجرد صورة أو رسالة عادية. يمكن تخصيص التصميم والمحتوى والفكرة بالكامل."
+data-en="Interactive websites designed to become part of the gift itself, rather than just a picture or ordinary message. The design, content, and concept can be fully customized.">
+مواقع تفاعلية مصممة لتكون جزءاً من الهدية نفسها، وليس مجرد صورة أو رسالة عادية.
+</p>
+
+<div class="pricing">
+
+<div class="price-card">
+<span class="badge" data-ar="الأكثر طلباً" data-en="Popular">الأكثر طلباً</span>
+<h3 data-ar="هدية عيد ميلاد" data-en="Birthday Gift Website">هدية عيد ميلاد</h3>
+<div class="price">350 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="صفحة شخصية" data-en="Personalized Page">صفحة شخصية</div><div class="feature-content" data-ar="صفحة مصممة خصيصاً للشخص مع اسمه ورسالة وصور وذكريات." data-en="A personalized page with the person's name, message, photos, and memories.">صفحة مصممة خصيصاً للشخص مع اسمه ورسالة وصور وذكريات.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="مفاجأة تفاعلية" data-en="Interactive Surprise">مفاجأة تفاعلية</div><div class="feature-content" data-ar="يمكن إضافة أسئلة أو خطوات أو مفاجآت تظهر تدريجياً." data-en="Questions, steps, and surprises can be revealed interactively.">يمكن إضافة أسئلة أو خطوات أو مفاجآت تظهر تدريجياً.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="كلمة مرور خاصة" data-en="Private Password">كلمة مرور خاصة</div><div class="feature-content" data-ar="إمكانية حماية الهدية بكلمة مرور أو رقم خاص." data-en="The gift can be protected with a private password or code.">إمكانية حماية الهدية بكلمة مرور أو رقم خاص.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="هدية ومفاجأة شخصية" data-en="Personal Surprise">هدية ومفاجأة شخصية</h3>
+<div class="price">450 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="فكرة مخصصة" data-en="Custom Concept">فكرة مخصصة</div><div class="feature-content" data-ar="تصميم الموقع حسب شخصية المهدى إليه والفكرة المطلوبة." data-en="The website is designed around the recipient and the desired concept.">تصميم الموقع حسب شخصية المهدى إليه والفكرة المطلوبة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="صور وذكريات" data-en="Photos & Memories">صور وذكريات</div><div class="feature-content" data-ar="إضافة الصور والرسائل والذكريات والمحتوى الشخصي." data-en="Add photos, messages, memories, and personalized content.">إضافة الصور والرسائل والذكريات والمحتوى الشخصي.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تفاعل ومفاجآت" data-en="Interactive Surprises">تفاعل ومفاجآت</div><div class="feature-content" data-ar="أزرار وأسئلة ومفاجآت ومراحل تفاعلية حسب الفكرة." data-en="Interactive buttons, questions, surprises, and stages.">أزرار وأسئلة ومفاجآت ومراحل تفاعلية حسب الفكرة.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="طلب موعد" data-en="Date Proposal Website">طلب موعد</h3>
+<div class="price">450 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="رسالة تفاعلية" data-en="Interactive Message">رسالة تفاعلية</div><div class="feature-content" data-ar="موقع مصمم حول فكرة طلب الموعد بطريقة مختلفة ومخصصة." data-en="A personalized interactive website designed around the date proposal.">موقع مصمم حول فكرة طلب الموعد بطريقة مختلفة ومخصصة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="اختيارات تفاعلية" data-en="Interactive Choices">اختيارات تفاعلية</div><div class="feature-content" data-ar="يمكن إضافة خيارات وأزرار وتفاعلات مختلفة داخل الموقع." data-en="Different options, buttons, and interactions can be added.">يمكن إضافة خيارات وأزرار وتفاعلات مختلفة داخل الموقع.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم خاص" data-en="Custom Design">تصميم خاص</div><div class="feature-content" data-ar="التصميم والألوان والمحتوى حسب فكرة العميل." data-en="Design, colors, and content based on the client's concept.">التصميم والألوان والمحتوى حسب فكرة العميل.</div></div>
+</div>
+
+<div class="price-card">
+<span class="badge" data-ar="مميز" data-en="Special">مميز</span>
+<h3 data-ar="طلب زواج" data-en="Marriage Proposal Website">طلب زواج</h3>
+<div class="price">650 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="قصة ورسالة شخصية" data-en="Personal Story & Message">قصة ورسالة شخصية</div><div class="feature-content" data-ar="عرض القصة أو الرسالة بطريقة مرتبة داخل الموقع." data-en="Present the story or personal message through the website.">عرض القصة أو الرسالة بطريقة مرتبة داخل الموقع.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تجربة تفاعلية" data-en="Interactive Experience">تجربة تفاعلية</div><div class="feature-content" data-ar="صفحات أو مراحل تفاعلية تجعل الهدية تجربة كاملة." data-en="Interactive pages or stages that turn the gift into a complete experience.">صفحات أو مراحل تفاعلية تجعل الهدية تجربة كاملة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="محتوى مخصص" data-en="Personalized Content">محتوى مخصص</div><div class="feature-content" data-ar="صور ورسائل وتفاصيل خاصة يتم تصميمها حسب الطلب." data-en="Personal photos, messages, and details designed specifically for the recipient.">صور ورسائل وتفاصيل خاصة يتم تصميمها حسب الطلب.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="هدية مضحكة" data-en="Funny Gift Website">هدية مضحكة</h3>
+<div class="price">350 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="فكرة كوميدية" data-en="Funny Concept">فكرة كوميدية</div><div class="feature-content" data-ar="موقع مبني على فكرة مضحكة أو مقلب خفيف أو رسالة غير متوقعة." data-en="A website built around a funny concept, harmless prank, or unexpected message.">موقع مبني على فكرة مضحكة أو مقلب خفيف أو رسالة غير متوقعة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تفاعلات مخصصة" data-en="Custom Interactions">تفاعلات مخصصة</div><div class="feature-content" data-ar="أزرار وأسئلة ورسائل وتفاعلات مختلفة حسب الفكرة." data-en="Custom buttons, questions, messages, and interactions.">أزرار وأسئلة ورسائل وتفاعلات مختلفة حسب الفكرة.</div></div>
+</div>
+
+<div class="price-card">
+<h3 data-ar="دعوة مناسبة ذكية" data-en="Smart Event Invitation">دعوة مناسبة ذكية</h3>
+<div class="price">450 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="دعوة عبر رابط" data-en="Shareable Link">دعوة عبر رابط</div><div class="feature-content" data-ar="دعوة إلكترونية تفتح من رابط ويتم إرسالها بسهولة عبر واتساب." data-en="A digital invitation accessible through a shareable link and easy to send through WhatsApp.">دعوة إلكترونية تفتح من رابط ويتم إرسالها بسهولة عبر واتساب.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="معلومات المناسبة" data-en="Event Details">معلومات المناسبة</div><div class="feature-content" data-ar="التاريخ والوقت والمكان والتفاصيل المهمة." data-en="Date, time, location, and important event details.">التاريخ والوقت والمكان والتفاصيل المهمة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="خريطة الموقع" data-en="Location Map">خريطة الموقع</div><div class="feature-content" data-ar="إضافة رابط مباشر للموقع عبر خرائط Google." data-en="Direct Google Maps location link.">إضافة رابط مباشر للموقع عبر خرائط Google.</div></div>
+</div>
+
+<div class="price-card">
+<span class="badge" data-ar="الأكثر تميزاً" data-en="Premium">الأكثر تميزاً</span>
+<h3 data-ar="دعوة زفاف ذكية" data-en="Smart Wedding Invitation">دعوة زفاف ذكية</h3>
+<div class="price">750 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+<div class="price-note" data-ar="دعوة تفاعلية وليست مجرد صورة" data-en="Interactive invitation, not just an image">دعوة تفاعلية وليست مجرد صورة</div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="صفحة زفاف متكاملة" data-en="Complete Wedding Page">صفحة زفاف متكاملة</div><div class="feature-content" data-ar="أسماء العروسين، التاريخ، الوقت، المكان وتفاصيل المناسبة." data-en="Couple names, date, time, venue, and event details.">أسماء العروسين، التاريخ، الوقت، المكان وتفاصيل المناسبة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="عداد تنازلي" data-en="Countdown">عداد تنازلي</div><div class="feature-content" data-ar="عداد حي حتى موعد المناسبة." data-en="A live countdown until the wedding date.">عداد حي حتى موعد المناسبة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تأكيد الحضور RSVP" data-en="RSVP">تأكيد الحضور RSVP</div><div class="feature-content" data-ar="إمكانية إضافة نموذج لتأكيد حضور الضيوف." data-en="Guests can confirm attendance through an RSVP form.">إمكانية إضافة نموذج لتأكيد حضور الضيوف.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="خرائط Google" data-en="Google Maps">خرائط Google</div><div class="feature-content" data-ar="زر مباشر للوصول إلى موقع القاعة." data-en="Direct button to navigate to the venue.">زر مباشر للوصول إلى موقع القاعة.</div></div>
+<div class="feature"><div class="feature-title" onclick="toggleFeature(this)" data-ar="تصميم مخصص" data-en="Custom Design">تصميم مخصص</div><div class="feature-content" data-ar="الألوان والخطوط والصور والتفاصيل حسب هوية المناسبة." data-en="Custom colors, fonts, photos, and details matching the event identity.">الألوان والخطوط والصور والتفاصيل حسب هوية المناسبة.</div></div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section id="portfolio">
+
+<h2 class="section-title" data-ar="أعمالنا" data-en="Our Work">أعمالنا</h2>
+
+<p class="section-sub"
+data-ar="مواقع حقيقية نفّذناها لعملائنا — كل موقع قصة مختلفة وتجربة فريدة."
+data-en="Real websites we built for our clients — every site is a different story and a unique experience.">
+مواقع حقيقية نفّذناها لعملائنا — كل موقع قصة مختلفة وتجربة فريدة.
+</p>
+
+<div class="portfolio-grid" id="portfolio-grid">
+
+<!-- بطاقة دعوة عقد القران -->
+<a href="https://nayeon42-art.github.io/Khadija-Ashraf/" target="_blank" class="portfolio-card">
+<div class="portfolio-preview">
+<div class="portfolio-icon">💍</div>
+<div class="portfolio-shine"></div>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-tag" data-ar="دعوة زفاف ذكية" data-en="Smart Wedding Invitation">دعوة زفاف ذكية</div>
+<h3 data-ar="دعوة عقد قران — خديجة وأشرف" data-en="Wedding Invitation — Khadija & Ashraf">دعوة عقد قران — خديجة وأشرف</h3>
+<p data-ar="دعوة إلكترونية تفاعلية تضمنت تفاصيل المناسبة وعداداً تنازلياً وموقع المسجد النبوي." data-en="An interactive digital invitation with event details, a live countdown, and the Al-Masjid an-Nabawi location.">دعوة إلكترونية تفاعلية تضمنت تفاصيل المناسبة وعداداً تنازلياً وموقع المسجد النبوي.</p>
+<span class="portfolio-link-label" data-ar="عرض الموقع ←" data-en="View Site ←">عرض الموقع ←</span>
+</div>
+</a>
+
+</div>
+
+<!-- ================= ADMIN ADD WORK ================= -->
+<div class="add-work-area" id="add-work-area" style="display:none;">
+
+<div class="add-work-box">
+<h3 data-ar="➕ إضافة عمل جديد" data-en="➕ Add New Work">➕ إضافة عمل جديد</h3>
+
+<div class="work-form">
+<input type="text" id="w-title"
+data-ar-placeholder="عنوان المشروع (مثال: دعوة عقد قران — فلان)"
+data-en-placeholder="Project title (e.g. Wedding Invitation — Name)"
+placeholder="عنوان المشروع (مثال: دعوة عقد قران — فلان)">
+
+<input type="url" id="w-url"
+data-ar-placeholder="رابط الموقع (https://...)"
+data-en-placeholder="Website URL (https://...)"
+placeholder="رابط الموقع (https://...)">
+
+<input type="text" id="w-desc"
+data-ar-placeholder="وصف قصير للمشروع"
+data-en-placeholder="Short project description"
+placeholder="وصف قصير للمشروع">
+
+<select id="w-type">
+<option value="💍" data-ar="💍 دعوة زفاف / عقد قران" data-en="💍 Wedding / Engagement">💍 دعوة زفاف / عقد قران</option>
+<option value="🎂" data-ar="🎂 هدية عيد ميلاد" data-en="🎂 Birthday Gift">🎂 هدية عيد ميلاد</option>
+<option value="🎁" data-ar="🎁 هدية شخصية" data-en="🎁 Personal Gift">🎁 هدية شخصية</option>
+<option value="💌" data-ar="💌 طلب موعد" data-en="💌 Date Proposal">💌 طلب موعد</option>
+<option value="😄" data-ar="😄 هدية مضحكة" data-en="😄 Funny Gift">😄 هدية مضحكة</option>
+<option value="📩" data-ar="📩 دعوة مناسبة" data-en="📩 Event Invitation">📩 دعوة مناسبة</option>
+<option value="👤" data-ar="👤 موقع شخصي" data-en="👤 Personal Website">👤 موقع شخصي</option>
+<option value="🏢" data-ar="🏢 موقع شركة" data-en="🏢 Business Website">🏢 موقع شركة</option>
+<option value="🛒" data-ar="🛒 متجر إلكتروني" data-en="🛒 Online Store">🛒 متجر إلكتروني</option>
+<option value="⚙️" data-ar="⚙️ نظام خاص" data-en="⚙️ Custom System">⚙️ نظام خاص</option>
+</select>
+
+<button id="add-work-btn" onclick="addWork()" data-ar="إضافة للأعمال" data-en="Add to Portfolio">إضافة للأعمال</button>
+</div>
+</div>
+</div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+<h2 class="section-title" data-ar="آراء العملاء" data-en="Client Reviews">آراء العملاء</h2>
+
+<p class="section-sub"
+data-ar="تجارب حقيقية من عملاء وثقوا بنا وأشادوا بالنتيجة."
+data-en="Real experiences from clients who trusted us and praised the results.">
+تجارب حقيقية من عملاء وثقوا بنا وأشادوا بالنتيجة.
+</p>
+
+<!-- بطاقات التقييمات -->
+<div class="reviews-grid" id="reviews-grid">
+
+<!-- تقييم 1 -->
+<div class="review-card" data-id="r1">
+<button class="delete-btn" onclick="deleteReview(this)" title="حذف التقييم">🗑</button>
+<div class="review-quote">"</div>
+<div class="review-header">
+<div class="review-avatar">🎂</div>
+<div class="review-meta">
+<h4 data-ar="عميل — هدية عيد ميلاد" data-en="Client — Birthday Gift">عميل — هدية عيد ميلاد</h4>
+<span data-ar="موقع معايدة تفاعلي" data-en="Interactive Birthday Site">موقع معايدة تفاعلي</span>
+<div class="review-email" data-ar="عميل موثّق" data-en="Verified client">m***@gmail.com</div>
+</div>
+</div>
+<div class="review-service-tag" data-ar="هدية عيد ميلاد" data-en="Birthday Gift Website">هدية عيد ميلاد</div>
+<div class="review-stars">★★★★★</div>
+<p class="review-text"
+data-ar="طلبت موقع معايدة بعيد ميلاد لصديقي، وكانت النتيجة فوق توقعاتي بكثير. التصميم كان شخصياً جداً، والتفاصيل كلها حسب اللي طلبته. صاحبي انبسط عليه جداً وما توقع يشوف حاجة بالمستوى هذا. أنصح بيه بجد."
+data-en="I ordered a birthday surprise website for my friend, and the result was way beyond what I expected. The design was very personal, every detail exactly as I asked. My friend loved it and didn't expect something at this level. Highly recommend.">
+طلبت موقع معايدة بعيد ميلاد لصديقي، وكانت النتيجة فوق توقعاتي بكثير. التصميم كان شخصياً جداً، والتفاصيل كلها حسب اللي طلبته. صاحبي انبسط عليه جداً وما توقع يشوف حاجة بالمستوى هذا. أنصح بيه بجد.
+</p>
+</div>
+
+
+<!-- ================= ADD REVIEW FORM ================= -->
+<div class="reviews-grid" style="margin-bottom:0;">
+<div class="add-review-box">
+
+<h3 data-ar="أضف تقييمك" data-en="Add Your Review">أضف تقييمك</h3>
+<p class="sub-note" data-ar="شاركنا تجربتك معنا" data-en="Share your experience with us">شاركنا تجربتك معنا</p>
+
+<div class="review-form">
+
+<input type="text" id="r-name"
+data-ar-placeholder="اسمك أو كنيتك (اختياري)"
+data-en-placeholder="Your name or nickname (optional)"
+placeholder="اسمك أو كنيتك (اختياري)">
+
+<input type="email" id="r-email"
+data-ar-placeholder="بريدك الإلكتروني (اختياري - لإثبات مصداقية التقييم)"
+data-en-placeholder="Your email (optional - to verify the review)"
+placeholder="بريدك الإلكتروني (اختياري - لإثبات مصداقية التقييم)">
+
+<select id="r-service">
+<option value="" data-ar="نوع الخدمة" data-en="Service type">نوع الخدمة</option>
+<option value="هدية عيد ميلاد" data-ar="هدية عيد ميلاد" data-en="Birthday Gift Website">هدية عيد ميلاد</option>
+<option value="هدية ومفاجأة شخصية" data-ar="هدية ومفاجأة شخصية" data-en="Personal Surprise">هدية ومفاجأة شخصية</option>
+<option value="طلب موعد" data-ar="طلب موعد" data-en="Date Proposal Website">طلب موعد</option>
+<option value="طلب زواج" data-ar="طلب زواج" data-en="Marriage Proposal Website">طلب زواج</option>
+<option value="هدية مضحكة" data-ar="هدية مضحكة" data-en="Funny Gift Website">هدية مضحكة</option>
+<option value="دعوة مناسبة ذكية" data-ar="دعوة مناسبة ذكية" data-en="Smart Event Invitation">دعوة مناسبة ذكية</option>
+<option value="دعوة زفاف ذكية" data-ar="دعوة زفاف ذكية" data-en="Smart Wedding Invitation">دعوة زفاف ذكية</option>
+<option value="موقع شخصي" data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
+<option value="موقع شركة" data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
+<option value="متجر إلكتروني" data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
+<option value="نظام خاص" data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
+</select>
+
+<div class="star-selector">
+<label data-ar="تقييمك:" data-en="Rating:">تقييمك:</label>
+<div class="stars-row" id="star-row">
+<input type="radio" name="rating" id="s5" value="5"><label class="star-lbl" for="s5">★</label>
+<input type="radio" name="rating" id="s4" value="4"><label class="star-lbl" for="s4">★</label>
+<input type="radio" name="rating" id="s3" value="3"><label class="star-lbl" for="s3">★</label>
+<input type="radio" name="rating" id="s2" value="2"><label class="star-lbl" for="s2">★</label>
+<input type="radio" name="rating" id="s1" value="1"><label class="star-lbl" for="s1">★</label>
+</div>
+</div>
+
+<textarea id="r-text"
+data-ar-placeholder="اكتب تجربتك مع Wali Links..."
+data-en-placeholder="Write your experience with Wali Links..."
+placeholder="اكتب تجربتك مع Wali Links..."
+required></textarea>
+
+<button id="add-review-btn" onclick="addReview()" data-ar="نشر التقييم" data-en="Post Review">نشر التقييم</button>
+
+</div>
+</div>
+</div>
+
+<!-- ================= ADMIN PANEL ================= -->
+<div class="admin-toggle-area">
+<button onclick="toggleAdminPanel()" data-ar="🔒 إدارة التقييمات" data-en="🔒 Manage Reviews">🔒 إدارة التقييمات</button>
+
+<div id="admin-panel">
+<p data-ar="أدخل كود الأدمن للتمكن من حذف التقييمات" data-en="Enter admin code to manage reviews">أدخل كود الأدمن للتمكن من حذف التقييمات</p>
+<input type="password" id="admin-code-input" maxlength="20"
+data-ar-placeholder="كود الأدمن"
+data-en-placeholder="Admin code"
+placeholder="كود الأدمن">
+<br>
+<button id="admin-enter-btn" onclick="checkAdminCode()" data-ar="دخول" data-en="Enter">دخول</button>
+<div id="admin-status"></div>
+</div>
+
+<div class="admin-active-bar" data-ar="✅ وضع الأدمن مفعّل — اضغط على 🗑 لحذف أي تقييم" data-en="✅ Admin mode active — click 🗑 to delete any review">✅ وضع الأدمن مفعّل — اضغط على 🗑 لحذف أي تقييم</div>
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2 class="section-title" data-ar="اطلب موقعك الآن" data-en="Order Your Website Now">اطلب موقعك الآن</h2>
+
+<p class="section-sub"
+data-ar="قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت."
+data-en="Send us your project details and we'll get back to you as soon as possible.">
+قم بإرسال تفاصيل مشروعك وسيتم التواصل معك في أقرب وقت.
+</p>
+
+<div id="contact-form">
+<input type="text" id="f-name" data-ar-placeholder="الاسم الكامل" data-en-placeholder="Full Name" placeholder="الاسم الكامل" required>
+<input type="email" id="f-email" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email Address" placeholder="البريد الإلكتروني" required>
+<input type="tel" id="f-phone" data-ar-placeholder="رقم الهاتف" data-en-placeholder="Phone Number" placeholder="رقم الهاتف">
+
+<select id="f-service" required>
+<option value="" data-ar="اختر نوع الموقع" data-en="Select Website Type">اختر نوع الموقع</option>
+<optgroup label="مواقع الأعمال" data-ar-label="مواقع الأعمال" data-en-label="Business Websites">
+<option value="موقع شخصي" data-ar="موقع شخصي" data-en="Personal Website">موقع شخصي</option>
+<option value="موقع شركة" data-ar="موقع شركة" data-en="Business Website">موقع شركة</option>
+<option value="متجر إلكتروني" data-ar="متجر إلكتروني" data-en="Online Store">متجر إلكتروني</option>
+<option value="نظام خاص" data-ar="نظام خاص" data-en="Custom System">نظام خاص</option>
+</optgroup>
+<optgroup label="الهدايا والمناسبات" data-ar-label="الهدايا والمناسبات" data-en-label="Gifts & Occasions">
+<option value="هدية عيد ميلاد" data-ar="هدية عيد ميلاد" data-en="Birthday Gift Website">هدية عيد ميلاد</option>
+<option value="هدية ومفاجأة شخصية" data-ar="هدية ومفاجأة شخصية" data-en="Personal Surprise">هدية ومفاجأة شخصية</option>
+<option value="طلب موعد" data-ar="طلب موعد" data-en="Date Proposal Website">طلب موعد</option>
+<option value="طلب زواج" data-ar="طلب زواج" data-en="Marriage Proposal Website">طلب زواج</option>
+<option value="هدية مضحكة" data-ar="هدية مضحكة" data-en="Funny Gift Website">هدية مضحكة</option>
+<option value="دعوة مناسبة ذكية" data-ar="دعوة مناسبة ذكية" data-en="Smart Event Invitation">دعوة مناسبة ذكية</option>
+<option value="دعوة زفاف ذكية" data-ar="دعوة زفاف ذكية" data-en="Smart Wedding Invitation">دعوة زفاف ذكية</option>
+</optgroup>
+</select>
+
+<textarea id="f-message"
+data-ar-placeholder="اكتب تفاصيل مشروعك..."
+data-en-placeholder="Write your project details..."
+placeholder="اكتب تفاصيل مشروعك..."
+required></textarea>
+
+<button id="submit-btn" onclick="submitForm()" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
+</div>
+
+<div id="success-msg">
+<div class="success-icon">✅</div>
+<div class="success-title" data-ar="تم إرسال طلبك بنجاح!" data-en="Your request was sent successfully!">تم إرسال طلبك بنجاح!</div>
+<div class="success-text" data-ar="شكراً لك، سيتم التواصل معك في أقرب وقت ممكن." data-en="Thank you! We'll get back to you as soon as possible.">شكراً لك، سيتم التواصل معك في أقرب وقت ممكن.</div>
+</div>
+
+<div class="social-contact">
+<h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+<div class="social-box">
+
+<a href="https://wa.me/249100942327" target="_blank" class="social-item">
+<div class="social-icon whatsapp">💬</div>
+<div>
+<h4 data-ar="واتساب" data-en="WhatsApp">واتساب</h4>
+<p>+249 10 094 2327</p>
+</div>
+</a>
+
+<a href="mailto:esrasaifeldeen@gmail.com" class="social-item">
+<div class="social-icon email">📧</div>
+<div>
+<h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+<p>esrasaifeldeen@gmail.com</p>
+</div>
+</a>
+
+<div class="social-item location">
+<div class="social-icon location-icon">📍</div>
+<div>
+<h4 data-ar="الموقع" data-en="Location">الموقع</h4>
+<p data-ar="المدينة المنورة" data-en="Madinah, Saudi Arabia">المدينة المنورة</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="work-time" data-ar="ساعات العمل: من 5 مساءً حتى 4 صباحاً" data-en="Working Hours: 5 PM to 4 AM">ساعات العمل: من 5 مساءً حتى 4 صباحاً</div>
+
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<span data-ar="© 2026 Wali Links - جميع الحقوق محفوظة" data-en="© 2026 Wali Links - All Rights Reserved">© 2026 Wali Links - جميع الحقوق محفوظة</span>
+
+<br><br>
+
+<span
+data-ar="تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته."
+data-en="Note: Clients are required to purchase their own domain to have full control over their website. Payment is made after viewing and testing the site.">
+تنويه: يتوجب على جميع العملاء شراء دومين خاص بهم ليكون للعميل كامل السيطرة على موقعه، ويتم الدفع بعد مشاهدة الموقع وتجربته.
+</span>
+
+</footer>
+
+
+<script>
+
+/* ================= FIREBASE ================= */
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAIu_RIySzjQuIQAGezeD-pHkisVrKTdTU",
+  authDomain: "wali-links.firebaseapp.com",
+  projectId: "wali-links",
+  storageBucket: "wali-links.firebasestorage.app",
+  messagingSenderId: "96093969609",
+  appId: "1:96093969609:web:082cb6d181b973c21e0118",
+  measurementId: "G-PJFX91H312"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const reviewsCollection = db.collection('reviews');
+
+/* ================= LANGUAGE ================= */
+
+let currentLang = 'ar';
+
+function toggleLang(){
+currentLang = currentLang === 'ar' ? 'en' : 'ar';
+const isEn = currentLang === 'en';
+
+document.documentElement.lang = currentLang;
+document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+document.querySelector('#lang-btn').textContent = isEn ? 'AR' : 'EN';
+document.title = isEn ? 'Wali Links | Web Design & Development' : 'Wali Links | تصميم وبيع المواقع الإلكترونية';
+
+document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+el.textContent = isEn ? el.dataset.en : el.dataset.ar;
+});
+
+document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(el => {
+el.placeholder = isEn ? el.dataset.enPlaceholder : el.dataset.arPlaceholder;
+});
+
+document.querySelectorAll('select option[data-ar][data-en]').forEach(opt => {
+opt.textContent = isEn ? opt.dataset.en : opt.dataset.ar;
+});
+
+document.querySelectorAll('optgroup[data-ar-label][data-en-label]').forEach(group => {
+group.label = isEn ? group.dataset.enLabel : group.dataset.arLabel;
+});
+
+document.querySelectorAll('.feature').forEach(feature => {
+feature.style.textAlign = isEn ? 'left' : 'right';
+});
+
+/* تحديث التقييمات الديناميكية */
+document.querySelectorAll('.review-card[data-dynamic]').forEach(card => {
+/* التقييمات المضافة لا تتغير لغتها - محتواها ثابت */
+});
+}
+
+
+/* ================= FEATURES ================= */
+
+function toggleFeature(element){
+const content = element.nextElementSibling;
+content.style.display = content.style.display === 'block' ? 'none' : 'block';
+}
+
+
+/* ================= REVIEWS ================= */
+
+let reviewCounter = 100;
+
+loadReviews();
+
+const serviceEmojis = {
+'هدية عيد ميلاد': '🎂',
+'Birthday Gift Website': '🎂',
+'هدية ومفاجأة شخصية': '🎁',
+'Personal Surprise': '🎁',
+'طلب موعد': '💌',
+'Date Proposal Website': '💌',
+'طلب زواج': '💍',
+'Marriage Proposal Website': '💍',
+'هدية مضحكة': '😄',
+'Funny Gift Website': '😄',
+'دعوة مناسبة ذكية': '📩',
+'Smart Event Invitation': '📩',
+'دعوة زفاف ذكية': '💒',
+'Smart Wedding Invitation': '💒',
+'موقع شخصي': '👤',
+'Personal Website': '👤',
+'موقع شركة': '🏢',
+'Business Website': '🏢',
+'متجر إلكتروني': '🛒',
+'Online Store': '🛒',
+'نظام خاص': '⚙️',
+'Custom System': '⚙️',
+};
+
+function getStars(n){
+return '★'.repeat(n) + '☆'.repeat(5 - n);
+}
+
+function maskEmail(email){
+const parts = email.split('@');
+if(parts.length !== 2) return '';
+const user = parts[0];
+const domain = parts[1];
+const visible = user.slice(0, Math.min(2, user.length));
+return `${visible}${'*'.repeat(Math.max(3, user.length - visible.length))}@${domain}`;
+}
+
+function renderReviewCard(id, data){
+const emoji = serviceEmojis[data.service] || '💬';
+const starsHtml = getStars(data.rating || 5);
+const serviceLabel = data.service || 'Wali Links';
+const cleanName = data.name || 'عميل';
+const emailHtml = data.email ? `<div class="review-email">${maskEmail(data.email)}</div>` : '';
+
+const card = document.createElement('div');
+card.className = 'review-card';
+card.setAttribute('data-id', id);
+card.setAttribute('data-dynamic', '1');
+
+card.innerHTML = `
+<button class="delete-btn" onclick="deleteReview(this)" title="${currentLang === 'ar' ? 'حذف التقييم' : 'Delete Review'}">🗑</button>
+<div class="review-quote">"</div>
+<div class="review-header">
+<div class="review-avatar">${emoji}</div>
+<div class="review-meta">
+<h4>${cleanName}</h4>
+<span>${serviceLabel}</span>
+${emailHtml}
+</div>
+</div>
+${data.service ? `<div class="review-service-tag">${serviceLabel}</div>` : ''}
+<div class="review-stars" style="color:#f4c542;font-size:18px;margin-bottom:12px;letter-spacing:2px;">${starsHtml}</div>
+<p class="review-text">${data.text}</p>
+`;
+
+return card;
+}
+
+async function loadReviews(){
+try{
+const snapshot = await reviewsCollection.orderBy('timestamp', 'desc').get();
+const grid = document.getElementById('reviews-grid');
+
+snapshot.forEach(doc => {
+const card = renderReviewCard(doc.id, doc.data());
+grid.appendChild(card);
+});
+} catch(err){
+console.error('فشل تحميل التقييمات:', err);
+}
+}
+
+async function addReview(){
+const nameVal = document.getElementById('r-name').value.trim();
+const emailVal = document.getElementById('r-email').value.trim();
+const service = document.getElementById('r-service').value;
+const text = document.getElementById('r-text').value.trim();
+const ratingInput = document.querySelector('input[name="rating"]:checked');
+
+if(!text){
+alert(currentLang === 'ar' ? 'الرجاء كتابة تقييمك أولاً.' : 'Please write your review first.');
+return;
+}
+
+const rating = ratingInput ? parseInt(ratingInput.value) : 5;
+const cleanName = nameVal || (currentLang === 'ar' ? 'عميل' : 'Client');
+
+const reviewData = {
+name: cleanName,
+email: emailVal || null,
+service: service || null,
+text: text,
+rating: rating,
+timestamp: firebase.firestore.FieldValue.serverTimestamp()
+};
+
+const btn = document.getElementById('add-review-btn');
+btn.disabled = true;
+
+try{
+const docRef = await reviewsCollection.add(reviewData);
+
+const card = renderReviewCard(docRef.id, reviewData);
+document.getElementById('reviews-grid').appendChild(card);
+
+/* reset */
+document.getElementById('r-name').value = '';
+document.getElementById('r-email').value = '';
+document.getElementById('r-service').value = '';
+document.getElementById('r-text').value = '';
+if(ratingInput) ratingInput.checked = false;
+
+/* أنيميشن */
+card.style.opacity = '0';
+card.style.transform = 'translateY(20px)';
+setTimeout(() => {
+card.style.transition = 'opacity .4s ease, transform .4s ease';
+card.style.opacity = '1';
+card.style.transform = 'translateY(0)';
+}, 10);
+
+} catch(err){
+console.error('فشل نشر التقييم:', err);
+alert(currentLang === 'ar' ? 'حدث خطأ أثناء نشر التقييم، حاول مرة أخرى.' : 'Something went wrong, please try again.');
+} finally{
+btn.disabled = false;
+}
+}
+
+async function deleteReview(btn){
+const card = btn.closest('.review-card');
+const confirmMsg = currentLang === 'ar' ? 'هل تريد حذف هذا التقييم؟' : 'Delete this review?';
+if(!confirm(confirmMsg)) return;
+
+const id = card.getAttribute('data-id');
+
+try{
+if(id) await reviewsCollection.doc(id).delete();
+} catch(err){
+console.error('فشل حذف التقييم:', err);
+alert(currentLang === 'ar' ? 'حدث خطأ أثناء الحذف.' : 'Failed to delete.');
+return;
+}
+
+card.style.transition = 'opacity .3s, transform .3s';
+card.style.opacity = '0';
+card.style.transform = 'scale(.95)';
+setTimeout(() => card.remove(), 300);
+}
+
+
+/* ================= ADMIN ================= */
+
+const ADMIN_CODE = 'wali2026';
+let adminPanelOpen = false;
+
+function toggleAdminPanel(){
+adminPanelOpen = !adminPanelOpen;
+document.getElementById('admin-panel').style.display = adminPanelOpen ? 'block' : 'none';
+}
+
+function checkAdminCode(){
+const input = document.getElementById('admin-code-input').value;
+const status = document.getElementById('admin-status');
+
+if(input === ADMIN_CODE){
+document.body.classList.add('admin-mode');
+document.getElementById('add-work-area').style.display = 'block';
+document.getElementById('admin-panel').style.display = 'none';
+status.textContent = '';
+adminPanelOpen = false;
+} else {
+status.textContent = currentLang === 'ar' ? '❌ كود خاطئ' : '❌ Wrong code';
+document.getElementById('admin-code-input').value = '';
+}
+}
+
+document.getElementById('admin-code-input').addEventListener('keydown', function(e){
+if(e.key === 'Enter') checkAdminCode();
+});
+
+
+/* ================= FORM ================= */
+
+async function submitForm(){
+const name = document.getElementById('f-name').value.trim();
+const email = document.getElementById('f-email').value.trim();
+const phone = document.getElementById('f-phone').value.trim();
+const service = document.getElementById('f-service').value;
+const message = document.getElementById('f-message').value.trim();
+
+if(!name || !email || !service || !message){
+alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
+return;
+}
+
+const btn = document.getElementById('submit-btn');
+btn.disabled = true;
+btn.textContent = currentLang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+
+try{
+const res = await fetch('https://formspree.io/f/xdablqqn', {
+method: 'POST',
+headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+body: JSON.stringify({ name, email, phone, service, message, _subject: 'طلب جديد من موقع Wali Links' })
+});
+
+if(res.ok){
+document.getElementById('contact-form').style.display = 'none';
+document.getElementById('success-msg').style.display = 'block';
+} else {
+throw new Error('فشل الإرسال');
+}
+
+} catch(err){
+btn.disabled = false;
+btn.textContent = currentLang === 'ar' ? 'إرسال الطلب' : 'Send Request';
+alert(currentLang === 'ar' ? 'حدث خطأ، حاول مرة أخرى.' : 'Something went wrong, please try again.');
+}
+}
+
+
+
+/* ================= PORTFOLIO ================= */
+
+function addWork(){
+const title = document.getElementById('w-title').value.trim();
+const url = document.getElementById('w-url').value.trim();
+const desc = document.getElementById('w-desc').value.trim();
+const typeSelect = document.getElementById('w-type');
+const emoji = typeSelect.value;
+const typeLabel = typeSelect.options[typeSelect.selectedIndex].text.replace(emoji,'').trim();
+
+if(!title || !url){
+alert(currentLang === 'ar' ? 'الرجاء إدخال العنوان والرابط على الأقل.' : 'Please enter at least a title and URL.');
+return;
+}
+
+const card = document.createElement('a');
+card.href = url;
+card.target = '_blank';
+card.className = 'portfolio-card';
+
+card.innerHTML = `
+<button class="portfolio-delete-btn" onclick="deleteWork(event,this)" title="حذف">🗑</button>
+<div class="portfolio-preview">
+<div class="portfolio-icon">${emoji}</div>
+<div class="portfolio-shine"></div>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-tag">${typeLabel}</div>
+<h3>${title}</h3>
+${desc ? `<p>${desc}</p>` : ''}
+<span class="portfolio-link-label" data-ar="عرض الموقع ←" data-en="View Site ←">${currentLang === 'ar' ? 'عرض الموقع ←' : 'View Site ←'}</span>
+</div>
+`;
+
+document.getElementById('portfolio-grid').appendChild(card);
+
+/* reset */
+document.getElementById('w-title').value = '';
+document.getElementById('w-url').value = '';
+document.getElementById('w-desc').value = '';
+
+card.style.opacity = '0';
+card.style.transform = 'translateY(20px)';
+setTimeout(() => {
+card.style.transition = 'opacity .4s, transform .4s';
+card.style.opacity = '1';
+card.style.transform = 'translateY(0)';
+},10);
+}
+
+function deleteWork(e, btn){
+e.preventDefault();
+e.stopPropagation();
+const card = btn.closest('.portfolio-card');
+const msg = currentLang === 'ar' ? 'هل تريد حذف هذا العمل؟' : 'Delete this work?';
+if(!confirm(msg)) return;
+card.style.transition = 'opacity .3s, transform .3s';
+card.style.opacity = '0';
+card.style.transform = 'scale(.95)';
+setTimeout(() => card.remove(), 300);
+}
+
+</script>
+
+</body>
+</html>
